@@ -1,0 +1,13 @@
+**/.codex/auth.json
+**/.codex/*.sqlite*
+**/.codex/cache/
+**/.codex/sessions/
+**/.codex/shell_snapshots/
+02/agent_homes/
+02/artifacts/
+02/meetings/
+02/state.json
+02/STOP
+02/workspaces/**/results/*.md
+__pycache__/
+*.pyc

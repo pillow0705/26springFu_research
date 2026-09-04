@@ -1,0 +1,6 @@
+# Runtime policy for the first laboratory prototype.
+# The Codex SDK receives these values through run_lab.py.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+approval_mode = "deny_all"
+sandbox = "workspace_write"

@@ -1,0 +1,5 @@
+# Example Codex MCP configuration for the lab backend.
+# Copy this into the active Codex configuration when enabling the backend.
+[mcp_servers.research_lab]
+command = "python3"
+args = ["/root/program/26research/26springFu_research/02/mcp_server.py"]
