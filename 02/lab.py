@@ -47,10 +47,6 @@ def _raise_turn_timeout(*_: Any) -> None:
     raise TurnTimeout("turn timeout")
 
 
-def _raise_turn_timeout(*_: Any) -> None:
-    raise TurnTimeout("turn timeout")
-
-
 class ResearchLab:
     """A deliberately thin coordinator around independent Codex threads.
 
@@ -291,6 +287,14 @@ class ResearchLab:
             kind = match.group(1).upper()
             target = (match.group(2) or "").strip().lower().replace("-", "_").replace(" ", "_")
             content = match.group(3).strip()
+            if kind in {"MESSAGE", "TASK"} and target not in self.specs:
+                # Models sometimes qualify a registered role with a task suffix
+                # (e.g. ``markman_check``).  Normalize only the explicit suffixes
+                # used by the lab protocol; unknown targets remain rejected.
+                for suffix in ("_calc", "_check", "_review", "_writer"):
+                    if target.endswith(suffix) and target[: -len(suffix)] in self.specs:
+                        target = target[: -len(suffix)]
+                        break
             if kind in {"MESSAGE", "TASK"} and target not in self.specs:
                 continue
             if kind in {"MESSAGE", "TASK", "MEETING", "WAIT", "STOP"}:

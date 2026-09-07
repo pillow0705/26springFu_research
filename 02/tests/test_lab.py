@@ -45,6 +45,17 @@ class ResearchLabTests(unittest.TestCase):
             )
             self.assertEqual([action["kind"] for action in actions], ["MESSAGE", "MEETING", "WAIT"])
 
+    def test_role_task_suffixes_are_normalized(self):
+        with self.make_lab() as lab:
+            actions = lab._parse_actions(
+                "ACTION: TASK lie_fu_calc | Compute the Kunneth basis.\n"
+                "ACTION: MESSAGE markman_check | Verify the citation."
+            )
+            self.assertEqual(
+                [(action["kind"], action["target"]) for action in actions],
+                [("TASK", "lie_fu"), ("MESSAGE", "markman")],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
