@@ -9,5 +9,16 @@
 02/state.json
 02/STOP
 02/workspaces/**/results/*.md
-__pycache__/
+03/runtime/
+03/.pytest_cache/
+03/**/.codex/plugins/
+03/**/.codex/skills/.system/
+03/**/.codex/*.json
+03/**/.codex/installation_id
+03/**/.codex/.sandbox_migration
+03/**/.codex/thread-writer-locks/
+03/**/.codex/tmp/
+03/**/workspace/group_meeting/
+03/*.log
+ __pycache__/
 *.pyc
