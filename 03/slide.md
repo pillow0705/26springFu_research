@@ -45,6 +45,7 @@
 flowchart LR
     subgraph AGENTS[研究 Agents]
         direction TB
+        D[蒸馏三位数学家的思想] --> M
         M[Math agents<br/>math1 … math21]
         R[Reviewer agents<br/>review1 … review21]
     end
@@ -64,10 +65,12 @@ flowchart LR
     classDef committee fill:#fff4df,stroke:#c78316,stroke-width:2px;
     classDef writer fill:#e8f1ff,stroke:#3973c6,stroke-width:1.5px;
     classDef output fill:#f3f3f3,stroke:#777,stroke-width:1.2px;
+    classDef note fill:#ffffff,stroke:#999,stroke-width:1px,font-size:11px;
     class M,R agent;
     class C committee;
     class W writer;
     class O output;
+    class D note;
 ```
 
 ### 工程实现方法：
