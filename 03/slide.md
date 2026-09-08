@@ -1,3 +1,5 @@
+## 
+
 | 子问题              | 负责 agent |
 | ---------------- | -------- |
 | S1：Type I(1)     | math1    |
@@ -74,5 +76,6 @@ flowchart LR
 ```
 
 ### 工程实现方法：
-1. **Codex SDK 如何发挥作用**：Codex SDK 为 math、reviewer 和 writer agent 创建并维持持久化 thread，通过 Goal 驱动它们执行长期任务；各 agent 在自己的 thread 中完成研究、评审、组会讨论和结果整理。  
-2. **中心委员会如何发挥作用**：中心委员会通过独立后端提供统一接口，负责登记任务、保存状态、分派稿件、接收评审意见、组织组会并汇总反馈。Math agent 通过接口提交稿件，reviewer agent 获取任务并回传意见，委员会再将退修要求和下一轮目标反馈给 math agent，最后把汇总结果交给 writer agent，由 writer 整理成最终研究成果。  
+**1. Codex SDK 如何发挥作用**：Codex SDK 为每个 math、reviewer 和 writer agent 创建并维持独立的持久化 thread，并通过 Goal 驱动它们持续执行任务。每个 agent 的 `AGNET` 和 Skills 规定其身份、研究流程、输出要求以及何时调用委员会工具；SDK 负责运行、暂停和恢复这些 agent。  
+
+**2. 中心委员会如何发挥作用**：中心委员会由独立后端提供 MCP 服务，通过 `committee_submit_manuscript`、`committee_get_review_task`、`committee_submit_review`、消息和组会等接口，让 agent 能够提交成果、领取任务、返回评审并参与讨论。Math agent 通过 MCP 提交稿件后，委员会登记并分派给 reviewer agent；reviewer agent 按 Skills 要求完成评审并回传意见，委员会再把反馈和下一轮目标返回 math agent，最后将汇总结果交给 writer agent 整理成最终成果。  
