@@ -72,6 +72,8 @@ flowchart LR
 
 ---
 
+
+# Appendix
 ## codex SDK 接口
 
 | Codex SDK 接口 / 能力 | 工程用途 | Goal 模式关键点 |
@@ -91,9 +93,6 @@ flowchart LR
 | Goal 任务成功 | agent 完成目标并停止继续轮次 | 状态为 `complete`，收到 `turn/completed` |
 | Goal 任务未完成 | 需要继续工作或人工处理 | 状态为 `blocked`、`budgetLimited` 或 `usageLimited` |
 
-## 当前进展
-
- 当前由于 GPT 5.6 So 模型的受限，所以整个实验无法完全跑起来，频繁遭遇中断；但是使用较低级模型确认了代码是可以跑通的。后续等 GPT 恢复之后，再次运行实验看看效果。 
 
 ## 参考链接
 
@@ -109,11 +108,35 @@ flowchart LR
 
 ### 本项目实现
 
-- [Academic Center Committee 后端](https://github.com/pillow0705/26springFu_research/tree/main/03/committee)
-- [MCP 服务入口](https://github.com/pillow0705/26springFu_research/blob/main/03/committee/mcp_server.py)
-- [委员会服务实现](https://github.com/pillow0705/26springFu_research/blob/main/03/committee/service.py)
-- [Agent 启动器](https://github.com/pillow0705/26springFu_research/blob/main/03/committee/start_lab.py)
-- [Agent 配置、AGNET 与 Skills](https://github.com/pillow0705/26springFu_research/tree/main/03/agent)
+- [GitHub 仓库：26springFu_research](https://github.com/pillow0705/26springFu_research)
+
+### 代码架构
+
+```text
+03/
+├── agent/
+│   ├── math1 … math21/
+│   │   ├── .codex/
+│   │   ├── AGNET
+│   │   └── skills/
+│   ├── review1 … review21/
+│   │   ├── .codex/
+│   │   ├── AGNET
+│   │   └── skills/
+│   └── Writer/
+│       ├── .codex/
+│       ├── AGNET
+│       └── skills/
+├── committee/
+│   ├── mcp_server.py
+│   ├── service.py
+│   └── start_lab.py
+├── tests/
+├── monitor_server.py
+├── start_lab.py
+├── README.md
+└── slide.md
+```
 
 
 
