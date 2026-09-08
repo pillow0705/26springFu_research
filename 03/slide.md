@@ -71,13 +71,10 @@ flowchart LR
 ```
 
 工程实现方法：
-1. 用 `CodexConfig/Codex/ApprovalMode` 在 `03/committee/start_lab.py` 统一配置 `gpt-5.5` + `ApprovalMode.deny_all`，一次性启动 43 个 thread。  
-2. 每个 math 线程通过 `thread_start` 建立持久化会话并发起 `start_goal_operation`，目标来源于各自 `AGNET` 与 `agent.md`。  
-3. 所有线程的 `thread_id` 与 goal 状态统一落盘到 `03/runtime/launch.json`，供监控与续跑。  
-4. 数学线程产出后调用 `committee_submit_manuscript`，由服务端做路径校验与副本落库。  
-5. `committee_submit_manuscript` 触发 `AcademicCenter Committee Service` 在 SQLite 中创建 `submissions` 并分配 `reviewer_id=mathn`。  
-6. Reviewer 线程读取任务并调用 `committee_submit_review` 回填 `APPROVE/REJECT + comments`。  
-7. 当 review 阶段结束或触发会签，委员会通过 `committee_get_review_result` 汇总结果并推送给对应 math agent。  
-8. 组会流程走 `committee_create_meeting -> submit_meeting_statement -> submit_meeting_comment -> finalize_meeting -> submit_meeting_synthesis`。  
-9. Writer 仅订阅委员会回传的汇总与反馈并执行最终梳理，完成研究内容压缩产物。  
-10. `03/monitor_server.py` 只读 `launch.json` 与 `committee.sqlite`，提供实时可视化与 `/api/state` 查询。  
+1. Codex SDK 为每个 math、reviewer 和 writer agent 创建持久化 thread，并用 Goal 管理长期任务。  
+2. math agent 独立研究子问题，通过委员会接口提交稿件和组会陈述。  
+3. 中心委员会统一登记任务、保存状态，并将稿件分派给 reviewer agent。  
+4. reviewer agent 通过 Codex SDK 读取评审任务，将评审意见和结论回传委员会。  
+5. 中心委员会汇总评审结果，并把反馈或下一轮目标发送给对应的 math agent。  
+6. 研究经过多轮提交、评审和修订后，委员会形成阶段性汇总。  
+7. writer agent 订阅委员会的汇总与反馈，负责整理并形成最终研究成果。  
