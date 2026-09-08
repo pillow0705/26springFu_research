@@ -70,11 +70,6 @@ flowchart LR
     class O output;
 ```
 
-工程实现方法：
-1. Codex SDK 为每个 math、reviewer 和 writer agent 创建持久化 thread，并用 Goal 管理长期任务。  
-2. math agent 独立研究子问题，通过委员会接口提交稿件和组会陈述。  
-3. 中心委员会统一登记任务、保存状态，并将稿件分派给 reviewer agent。  
-4. reviewer agent 通过 Codex SDK 读取评审任务，将评审意见和结论回传委员会。  
-5. 中心委员会汇总评审结果，并把反馈或下一轮目标发送给对应的 math agent。  
-6. 研究经过多轮提交、评审和修订后，委员会形成阶段性汇总。  
-7. writer agent 订阅委员会的汇总与反馈，负责整理并形成最终研究成果。  
+### 工程实现方法：
+1. **Codex SDK 如何发挥作用**：Codex SDK 为 math、reviewer 和 writer agent 创建并维持持久化 thread，通过 Goal 驱动它们执行长期任务；各 agent 在自己的 thread 中完成研究、评审、组会讨论和结果整理。  
+2. **中心委员会如何发挥作用**：中心委员会通过独立后端提供统一接口，负责登记任务、保存状态、分派稿件、接收评审意见、组织组会并汇总反馈。Math agent 通过接口提交稿件，reviewer agent 获取任务并回传意见，委员会再将退修要求和下一轮目标反馈给 math agent，最后把汇总结果交给 writer agent，由 writer 整理成最终研究成果。  
