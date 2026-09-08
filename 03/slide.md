@@ -1,26 +1,26 @@
-| 子问题 | 负责 agent |
-|---|---|
-| S1：Type I(1) | math1 |
-| S2：Type I(2) | math2 |
-| S3：Type I(3) | math3 |
-| S4：Type I(6) | math4 |
-| S5：Type II(1) | math5 |
-| S6：Type II(3) | math6 |
-| S7：Type III(1) | math7 |
-| S8：Type IV(1,1) | math8 |
-| S9：Type IV(2,1) | math9 |
-| S10：Type IV(3,1) | math10 |
-| S11：Type IV(6,1) | math11 |
-| N1：5+1 | math12 |
-| N2：4+2 | math13 |
-| N3：4+1+1 | math14 |
-| N4：3+3 | math15 |
-| N5：3+2+1 | math16 |
-| N6：3+1+1+1 | math17 |
-| N7：2+2+2 | math18 |
-| N8：2+2+1+1 | math19 |
-| N9：2+1+1+1+1 | math20 |
-| N10：1+1+1+1+1+1 | math21 |
+| 子问题              | 负责 agent |
+| ---------------- | -------- |
+| S1：Type I(1)     | math1    |
+| S2：Type I(2)     | math2    |
+| S3：Type I(3)     | math3    |
+| S4：Type I(6)     | math4    |
+| S5：Type II(1)    | math5    |
+| S6：Type II(3)    | math6    |
+| S7：Type III(1)   | math7    |
+| S8：Type IV(1,1)  | math8    |
+| S9：Type IV(2,1)  | math9    |
+| S10：Type IV(3,1) | math10   |
+| S11：Type IV(6,1) | math11   |
+| N1：5+1           | math12   |
+| N2：4+2           | math13   |
+| N3：4+1+1         | math14   |
+| N4：3+3           | math15   |
+| N5：3+2+1         | math16   |
+| N6：3+1+1+1       | math17   |
+| N7：2+2+2         | math18   |
+| N8：2+2+1+1       | math19   |
+| N9：2+1+1+1+1     | math20   |
+| N10：1+1+1+1+1+1  | math21   |
 
 每一个分裂后的子问题，目标都是证明该类六维阿贝尔簇的 Hodge 类结构及其代数性，并确定除子类、Weil 类和异常类的情况。
 
@@ -42,34 +42,63 @@
 | Goal 任务未完成 | 需要继续工作或人工处理 | 状态为 `blocked`、`budgetLimited` 或 `usageLimited` |
 
 ```mermaid
-flowchart TD
-    U[User] --> L[start_lab.py]
-    L --> S[线程池 43]
-    S --> MW[MathWorker 1..21]
-    S --> RW[Reviewer 1..21]
-    S --> W[Writer]
-    MW -->|thread_start + start_goal_operation| T[Codex Runtime Threads]
-    RW -->|SDK 客户端常驻| T
-    W -->|接收审稿与组会结果| T
-    T -->|MCP 工具调用| MCP[committee/mcp_server.py]
-    MCP --> C[AcademicCenter Committee Service]
-    C --> D[(runtime/committee.sqlite)]
-    MW -->|提交稿件| C
-    C -->|按编号派送| RW
-    RW -->|提交评审| C
-    C -->|评审反馈| MW
-    MW -->|组会陈述/评论| Meet[Committee.create_meeting + submit_meeting_statement/comment]
-    C -->|meeting_discussion| Meet
-    Meet -->|finalize_meeting| MW
-    C -->|最终汇总| W
-    C -->|committee_send_message| MSG[agent workspace/messages]
-    C --> R[runtime/launch.json]
-    R --> MON[03/monitor_server.py]
-    D --> MON
-    C --> MON
+flowchart TB
+    U[研究目标 / User] --> L[03/start_lab.py<br/>统一启动与编排]
+    L --> P[线程池<br/>43 个持久化 thread]
+
+    subgraph AGENTS[Agent 层]
+        M[Math agents<br/>math1 … math21]
+        R[Reviewer agents<br/>review1 … review21]
+        W[Writer agent]
+    end
+    P --> M
+    P --> R
+    P --> W
+
+    subgraph RUNTIME[Codex Runtime 层]
+        T[Codex SDK Runtime Threads<br/>thread_start / Goal / turn.stream]
+    end
+    M --> T
+    R --> T
+    W --> T
+
+    T -->|MCP tool calls| MCP[03/committee/mcp_server.py]
+
+    subgraph COMMITTEE[AcademicCenter Committee Service]
+        C[任务分派与状态管理]
+        WF[稿件评审 / 组会 / 汇总]
+    end
+    MCP --> C
+    C --> WF
+    WF -->|派送稿件| R
+    R -->|评审结果| WF
+    WF -->|反馈与下一轮目标| M
+    M -->|稿件、组会陈述| WF
+    WF -->|最终汇总| W
+
+    subgraph DATA[持久化数据]
+        DB[(runtime/committee.sqlite)]
+        MSG[agent workspace/messages]
+        LAUNCH[runtime/launch.json<br/>thread_id / goal 状态]
+    end
+    C --> DB
+    C --> MSG
+    L --> LAUNCH
+
+    LAUNCH --> MON[03/monitor_server.py<br/>只读监控与 /api/state]
+    DB --> MON
+
+    classDef entry fill:#e8f1ff,stroke:#3973c6,stroke-width:1.5px;
+    classDef agent fill:#eef8ee,stroke:#4b8b4b,stroke-width:1.5px;
+    classDef service fill:#fff4df,stroke:#c78316,stroke-width:1.5px;
+    classDef data fill:#f3f3f3,stroke:#777,stroke-width:1.2px;
+    class U,L,P entry;
+    class M,R,W,T agent;
+    class MCP,C,WF,MON service;
+    class DB,MSG,LAUNCH data;
 ```
 
-工程实现方法（不超过10行）：
+工程实现方法：
 1. 用 `CodexConfig/Codex/ApprovalMode` 在 `03/committee/start_lab.py` 统一配置 `gpt-5.5` + `ApprovalMode.deny_all`，一次性启动 43 个 thread。  
 2. 每个 math 线程通过 `thread_start` 建立持久化会话并发起 `start_goal_operation`，目标来源于各自 `AGNET` 与 `agent.md`。  
 3. 所有线程的 `thread_id` 与 goal 状态统一落盘到 `03/runtime/launch.json`，供监控与续跑。  
