@@ -42,60 +42,32 @@
 | Goal 任务未完成 | 需要继续工作或人工处理 | 状态为 `blocked`、`budgetLimited` 或 `usageLimited` |
 
 ```mermaid
-flowchart TB
-    U[研究目标 / User] --> L[03/start_lab.py<br/>统一启动与编排]
-    L --> P[线程池<br/>43 个持久化 thread]
-
-    subgraph AGENTS[Agent 层]
+flowchart LR
+    subgraph AGENTS[研究 Agents]
+        direction TB
         M[Math agents<br/>math1 … math21]
         R[Reviewer agents<br/>review1 … review21]
-        W[Writer agent]
     end
-    P --> M
-    P --> R
-    P --> W
 
-    subgraph RUNTIME[Codex Runtime 层]
-        T[Codex SDK Runtime Threads<br/>thread_start / Goal / turn.stream]
-    end
-    M --> T
-    R --> T
-    W --> T
+    C{{中心委员会<br/>AcademicCenter Committee}}
+    W[Writer agent]
+    O[最终研究成果]
 
-    T -->|MCP tool calls| MCP[03/committee/mcp_server.py]
+    M -->|提交稿件与组会陈述| C
+    C -->|分派评审任务| R
+    R -->|提交评审意见| C
+    C -->|反馈、退修与下一轮目标| M
+    C -->|最终汇总与评审结论| W
+    W -->|整理并形成最终论文| O
 
-    subgraph COMMITTEE[AcademicCenter Committee Service]
-        C[任务分派与状态管理]
-        WF[稿件评审 / 组会 / 汇总]
-    end
-    MCP --> C
-    C --> WF
-    WF -->|派送稿件| R
-    R -->|评审结果| WF
-    WF -->|反馈与下一轮目标| M
-    M -->|稿件、组会陈述| WF
-    WF -->|最终汇总| W
-
-    subgraph DATA[持久化数据]
-        DB[(runtime/committee.sqlite)]
-        MSG[agent workspace/messages]
-        LAUNCH[runtime/launch.json<br/>thread_id / goal 状态]
-    end
-    C --> DB
-    C --> MSG
-    L --> LAUNCH
-
-    LAUNCH --> MON[03/monitor_server.py<br/>只读监控与 /api/state]
-    DB --> MON
-
-    classDef entry fill:#e8f1ff,stroke:#3973c6,stroke-width:1.5px;
     classDef agent fill:#eef8ee,stroke:#4b8b4b,stroke-width:1.5px;
-    classDef service fill:#fff4df,stroke:#c78316,stroke-width:1.5px;
-    classDef data fill:#f3f3f3,stroke:#777,stroke-width:1.2px;
-    class U,L,P entry;
-    class M,R,W,T agent;
-    class MCP,C,WF,MON service;
-    class DB,MSG,LAUNCH data;
+    classDef committee fill:#fff4df,stroke:#c78316,stroke-width:2px;
+    classDef writer fill:#e8f1ff,stroke:#3973c6,stroke-width:1.5px;
+    classDef output fill:#f3f3f3,stroke:#777,stroke-width:1.2px;
+    class M,R agent;
+    class C committee;
+    class W writer;
+    class O output;
 ```
 
 工程实现方法：
