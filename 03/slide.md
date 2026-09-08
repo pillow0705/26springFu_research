@@ -41,12 +41,14 @@ flowchart LR
     W[Writer agent]
     O[最终研究成果]
 
-    M -->|提交稿件与组会陈述| C
-    C -->|分派评审任务| R
-    R -->|提交评审意见| C
-    C -->|反馈、退修与下一轮目标| M
+    M -->|MCP 通信<br/>提交成果| C
+    C -->|MCP 通信<br/>分派任务| R
+    R -->|MCP 通信<br/>回传评审| C
+    C -->|MCP 通信<br/>反馈与修订| M
     C -->|最终汇总与评审结论| W
     W -->|整理并形成最终论文| O
+
+    linkStyle 1,2,3,4 stroke:#d32f2f,stroke-width:2.5px;
 
     classDef agent fill:#eef8ee,stroke:#4b8b4b,stroke-width:1.5px;
     classDef committee fill:#fff4df,stroke:#c78316,stroke-width:2px;
@@ -67,11 +69,15 @@ flowchart LR
 
 **2. 中心委员会如何发挥作用**：~={red}中心委员会由独立后端提供 MCP 服务=~，通过 `committee_submit_manuscript`、`committee_get_review_task`、`committee_submit_review`、消息和组会等接口，让 agent 能够提交成果、领取任务、返回评审并参与讨论。Math agent 通过 MCP 提交稿件后，委员会登记并分派给 reviewer agent；~={red}r**eviewer agent 按 Skills 要求完成评审并回传意见**=~，委员会再把反馈和下一轮目标返回 math agent，最后将汇总结果交给 writer agent 整理成最终成果。  
 
+---
+
+## 当前进展
+
+ 当前由于 GPT 5.6 Sol 模型的受限，所以整个实验无法完全跑起来，频繁遭遇中断；但是使用较低级模型确认了代码是可以跑通的。后续等 GPT 恢复之后，再次运行实验看看效果。 
 
 
 
 ---
-
 
 # Appendix
 ## codex SDK 接口
@@ -103,8 +109,7 @@ flowchart LR
 - [Codex Skills 文档](https://developers.openai.com/codex/skills/)
 - [Model Context Protocol（MCP）介绍](https://modelcontextprotocol.io/docs/getting-started/intro)
 - [MCP 官方 Python SDK](https://github.com/modelcontextprotocol/python-sdk)
-- [Python `sqlite3` 文档](https://docs.python.org/3/library/sqlite3.html)
-- [Mermaid 图表文档](https://mermaid.js.org/intro/)
+
 
 ### 本项目实现
 
@@ -137,7 +142,6 @@ flowchart LR
 ├── README.md
 └── slide.md
 ```
-
 
 
 
