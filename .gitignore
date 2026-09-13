@@ -20,5 +20,6 @@
 03/**/.codex/tmp/
 03/**/workspace/group_meeting/
 03/*.log
- __pycache__/
+__pycache__/
 *.pyc
+04/.venv/

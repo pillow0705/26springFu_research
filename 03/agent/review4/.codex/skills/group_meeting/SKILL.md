@@ -1,3 +1,8 @@
+---
+name: group_meeting
+description: The protocol for group-meeting workflow in the Academic Center Committee.
+---
+
 # Academic Center Group Meeting Protocol
 
 ## Purpose

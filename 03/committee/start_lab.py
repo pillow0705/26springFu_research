@@ -18,7 +18,7 @@ from openai_codex import ApprovalMode, Codex, CodexConfig, Sandbox
 ROOT = Path(__file__).resolve().parents[1]
 AGENT_ROOT = ROOT / "agent"
 STATE_PATH = ROOT / "runtime" / "launch.json"
-MODEL = "gpt-5.5"
+MODEL = "gpt-5.6-luna"
 EFFORT = "high"
 PHASE_SECONDS = {"first": 5 * 60, "second": 15 * 60}
 
@@ -149,7 +149,7 @@ def _close_handles(handles: list[AgentHandle]) -> None:
         handle.client.close()
 
 
-def launch(phase: str, resume: bool) -> int:
+def launch(phase: str, resume: bool, math_workers: int = 21) -> int:
     previous = _load_state() if resume else None
     if resume and previous is None:
         raise RuntimeError("--resume requires 03/runtime/launch.json")
@@ -171,7 +171,8 @@ def launch(phase: str, resume: bool) -> int:
 
         handles.sort(key=lambda item: all_specs.index(item.spec))
         math_handles = [handle for handle in handles if handle.spec.is_math]
-        with ThreadPoolExecutor(max_workers=len(math_handles)) as pool:
+        math_workers = max(1, min(math_workers, len(math_handles)))
+        with ThreadPoolExecutor(max_workers=math_workers) as pool:
             goal_futures = [pool.submit(_start_goal, handle) for handle in math_handles]
             for future in as_completed(goal_futures):
                 future.result()
@@ -199,6 +200,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--phase", choices=sorted(PHASE_SECONDS), default="first")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument(
+        "--math-workers",
+        type=int,
+        default=21,
+        help="max concurrent math goals in this phase (default: 21)",
+    )
     parser.add_argument("--auto", action="store_true", help="run phase and the remaining later phases")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
@@ -207,23 +214,25 @@ def main() -> int:
             start = list(PHASE_SECONDS).index(args.phase)
             for phase in list(PHASE_SECONDS)[start:]:
                 print("THREADS_CREATED=43")
-                print("GOALS_STARTED=21")
+                print(f"GOALS_STARTED={min(21, args.math_workers)}")
                 print(f"PHASE={phase} DURATION_SECONDS={PHASE_SECONDS[phase]}")
+                print(f"MATH_WORKERS={args.math_workers}")
             return 0
         print("THREADS_CREATED=43")
-        print("GOALS_STARTED=21")
+        print(f"GOALS_STARTED={min(21, args.math_workers)}")
         print(f"PHASE={args.phase} DURATION_SECONDS={PHASE_SECONDS[args.phase]}")
+        print(f"MATH_WORKERS={args.math_workers}")
         return 0
     if not args.auto:
-        return launch(args.phase, args.resume)
+        return launch(args.phase, args.resume, args.math_workers)
 
     if args.phase == "second":
-        return launch("second", args.resume)
+        return launch("second", args.resume, args.math_workers)
 
-    status = launch("first", args.resume)
+    status = launch("first", args.resume, args.math_workers)
     if status != 0:
         return status
-    return launch("second", True)
+    return launch("second", True, args.math_workers)
 
 
 if __name__ == "__main__":

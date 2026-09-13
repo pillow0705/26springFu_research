@@ -1,3 +1,8 @@
+---
+name: reviewer_communication
+description: The protocol for math-agent review-communication workflow with the Academic Center Committee.
+---
+
 # Reviewer Communication Protocol
 
 ## Identity
