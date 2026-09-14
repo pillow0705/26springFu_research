@@ -1,0 +1,224 @@
+{"time": 1789303490.762764, "event": "AGENT_START", "agent": "A3"}
+{"time": 1789303490.7627, "event": "AGENT_START", "agent": "A1"}
+{"time": 1789303490.7627761, "event": "AGENT_START", "agent": "A2"}
+{"time": 1789303508.80851, "event": "SUBMIT", "task": "S1", "agent": "A3", "attempt": 1}
+{"time": 1789303508.8964639, "event": "SUBMIT", "task": "S1", "agent": "A1", "attempt": 1}
+{"time": 1789303510.288129, "event": "REVIEW", "task": "S1", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303510.547727, "event": "REVIEW", "task": "S1", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303514.5425549, "event": "SUBMIT", "task": "S1", "agent": "A2", "attempt": 1}
+{"time": 1789303515.73375, "event": "REVIEW", "task": "S1", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303518.856559, "event": "WRITER_ACCEPT", "task": "S1", "agent": "A2"}
+{"time": 1789303524.7744498, "event": "SUBMIT", "task": "S2", "agent": "A1", "attempt": 1}
+{"time": 1789303526.096948, "event": "REVIEW", "task": "S2", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303530.248783, "event": "SUBMIT", "task": "S2", "agent": "A3", "attempt": 1}
+{"time": 1789303531.804854, "event": "REVIEW", "task": "S2", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303540.347029, "event": "SUBMIT", "task": "S2", "agent": "A2", "attempt": 1}
+{"time": 1789303541.4826088, "event": "SUBMIT", "task": "S3", "agent": "A1", "attempt": 1}
+{"time": 1789303541.609338, "event": "REVIEW", "task": "S2", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303544.22852, "event": "REVIEW", "task": "S3", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303546.7793431, "event": "WRITER_ACCEPT", "task": "S2", "agent": "A2"}
+{"time": 1789303548.258177, "event": "SUBMIT", "task": "S2", "agent": "A3", "attempt": 2}
+{"time": 1789303549.6543941, "event": "REVIEW", "task": "S2", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303563.526328, "event": "SUBMIT", "task": "S3", "agent": "A1", "attempt": 2}
+{"time": 1789303564.379153, "event": "SUBMIT", "task": "S3", "agent": "A2", "attempt": 1}
+{"time": 1789303564.9350379, "event": "REVIEW", "task": "S3", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303566.098175, "event": "REVIEW", "task": "S3", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303571.847274, "event": "WRITER_ACCEPT", "task": "S3", "agent": "A2"}
+{"time": 1789303575.306249, "event": "SUBMIT", "task": "S3", "agent": "A3", "attempt": 1}
+{"time": 1789303576.295052, "event": "REVIEW", "task": "S3", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303586.803651, "event": "SUBMIT", "task": "S4", "agent": "A1", "attempt": 1}
+{"time": 1789303587.6383371, "event": "REVIEW", "task": "S4", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303593.051459, "event": "SUBMIT", "task": "S4", "agent": "A2", "attempt": 1}
+{"time": 1789303594.812613, "event": "REVIEW", "task": "S4", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789303599.602327, "event": "SUBMIT", "task": "S4", "agent": "A3", "attempt": 1}
+{"time": 1789303602.594719, "event": "REVIEW", "task": "S4", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303607.617182, "event": "SUBMIT", "task": "S5", "agent": "A1", "attempt": 1}
+{"time": 1789303609.34791, "event": "REVIEW", "task": "S5", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303614.479957, "event": "SUBMIT", "task": "S5", "agent": "A2", "attempt": 1}
+{"time": 1789303616.4099588, "event": "REVIEW", "task": "S5", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303621.722338, "event": "SUBMIT", "task": "S4", "agent": "A3", "attempt": 2}
+{"time": 1789303623.2123241, "event": "REVIEW", "task": "S4", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303629.941878, "event": "SUBMIT", "task": "S6", "agent": "A1", "attempt": 1}
+{"time": 1789303631.5065339, "event": "REVIEW", "task": "S6", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303638.283104, "event": "SUBMIT", "task": "S5", "agent": "A2", "attempt": 2}
+{"time": 1789303639.482687, "event": "REVIEW", "task": "S5", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303649.2411919, "event": "SUBMIT", "task": "S5", "agent": "A3", "attempt": 1}
+{"time": 1789303649.5790431, "event": "SUBMIT", "task": "S7", "agent": "A1", "attempt": 1}
+{"time": 1789303651.33168, "event": "REVIEW", "task": "S7", "agent": "A1", "decision": "APPROVE"}
+{"time": 1789303652.600252, "event": "REVIEW", "task": "S5", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303656.325957, "event": "WRITER_ACCEPT", "task": "S7", "agent": "A1"}
+{"time": 1789303663.359398, "event": "SUBMIT", "task": "S5", "agent": "A2", "attempt": 3}
+{"time": 1789303664.6714728, "event": "REVIEW", "task": "S5", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303669.871254, "event": "WRITER_ACCEPT", "task": "S5", "agent": "A2"}
+{"time": 1789303675.085851, "event": "SUBMIT", "task": "S5", "agent": "A3", "attempt": 2}
+{"time": 1789303676.417814, "event": "SUBMIT", "task": "S8", "agent": "A1", "attempt": 1}
+{"time": 1789303677.0006158, "event": "REVIEW", "task": "S5", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303679.6174898, "event": "REVIEW", "task": "S8", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303697.1817422, "event": "SUBMIT", "task": "S6", "agent": "A2", "attempt": 1}
+{"time": 1789303698.3174698, "event": "SUBMIT", "task": "S5", "agent": "A3", "attempt": 3}
+{"time": 1789303700.423758, "event": "REVIEW", "task": "S5", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303700.4362931, "event": "REVIEW", "task": "S6", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303704.1734421, "event": "SUBMIT", "task": "S8", "agent": "A1", "attempt": 2}
+{"time": 1789303705.875778, "event": "REVIEW", "task": "S8", "agent": "A1", "decision": "APPROVE"}
+{"time": 1789303711.4630919, "event": "WRITER_ACCEPT", "task": "S8", "agent": "A1"}
+{"time": 1789303721.968875, "event": "SUBMIT", "task": "S6", "agent": "A2", "attempt": 2}
+{"time": 1789303723.4480371, "event": "REVIEW", "task": "S6", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303726.608685, "event": "SUBMIT", "task": "S6", "agent": "A3", "attempt": 1}
+{"time": 1789303728.44131, "event": "REVIEW", "task": "S6", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303729.366091, "event": "SUBMIT", "task": "S9", "agent": "A1", "attempt": 1}
+{"time": 1789303730.81867, "event": "REVIEW", "task": "S9", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303745.143955, "event": "SUBMIT", "task": "S10", "agent": "A1", "attempt": 1}
+{"time": 1789303746.176681, "event": "SUBMIT", "task": "S6", "agent": "A2", "attempt": 3}
+{"time": 1789303746.332628, "event": "REVIEW", "task": "S10", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303746.757407, "event": "SUBMIT", "task": "S6", "agent": "A3", "attempt": 2}
+{"time": 1789303747.823602, "event": "REVIEW", "task": "S6", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303748.009965, "event": "REVIEW", "task": "S6", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303764.4040298, "event": "SUBMIT", "task": "S11", "agent": "A1", "attempt": 1}
+{"time": 1789303766.575594, "event": "REVIEW", "task": "S11", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303767.820734, "event": "SUBMIT", "task": "S7", "agent": "A3", "attempt": 1}
+{"time": 1789303769.2541199, "event": "REVIEW", "task": "S7", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303773.744481, "event": "SUBMIT", "task": "S7", "agent": "A2", "attempt": 1}
+{"time": 1789303775.953475, "event": "REVIEW", "task": "S7", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303784.832373, "event": "SUBMIT", "task": "S11", "agent": "A1", "attempt": 2}
+{"time": 1789303786.496158, "event": "REVIEW", "task": "S11", "agent": "A1", "decision": "APPROVE"}
+{"time": 1789303791.868608, "event": "WRITER_ACCEPT", "task": "S11", "agent": "A1"}
+{"time": 1789303792.6259148, "event": "SUBMIT", "task": "S8", "agent": "A3", "attempt": 1}
+{"time": 1789303794.975892, "event": "REVIEW", "task": "S8", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303800.452071, "event": "SUBMIT", "task": "S7", "agent": "A2", "attempt": 2}
+{"time": 1789303802.187988, "event": "REVIEW", "task": "S7", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303807.771544, "event": "WRITER_ACCEPT", "task": "S7", "agent": "A2"}
+{"time": 1789303810.6937401, "event": "SUBMIT", "task": "N1", "agent": "A1", "attempt": 1}
+{"time": 1789303811.869458, "event": "REVIEW", "task": "N1", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303812.3092108, "event": "SUBMIT", "task": "S8", "agent": "A3", "attempt": 2}
+{"time": 1789303813.609341, "event": "REVIEW", "task": "S8", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303827.0901701, "event": "SUBMIT", "task": "S8", "agent": "A2", "attempt": 1}
+{"time": 1789303828.966996, "event": "SUBMIT", "task": "N2", "agent": "A1", "attempt": 1}
+{"time": 1789303829.312893, "event": "SUBMIT", "task": "S9", "agent": "A3", "attempt": 1}
+{"time": 1789303830.596365, "event": "REVIEW", "task": "S9", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303830.795839, "event": "REVIEW", "task": "S8", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303830.875277, "event": "REVIEW", "task": "N2", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303851.979684, "event": "SUBMIT", "task": "S8", "agent": "A2", "attempt": 2}
+{"time": 1789303853.345215, "event": "REVIEW", "task": "S8", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303853.6339421, "event": "SUBMIT", "task": "S10", "agent": "A3", "attempt": 1}
+{"time": 1789303854.4661188, "event": "SUBMIT", "task": "N3", "agent": "A1", "attempt": 1}
+{"time": 1789303856.244969, "event": "REVIEW", "task": "S10", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303857.057197, "event": "WRITER_ACCEPT", "task": "S8", "agent": "A2"}
+{"time": 1789303857.3547552, "event": "REVIEW", "task": "N3", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303874.651693, "event": "SUBMIT", "task": "N3", "agent": "A1", "attempt": 2}
+{"time": 1789303875.890322, "event": "REVIEW", "task": "N3", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303877.8627882, "event": "SUBMIT", "task": "S10", "agent": "A3", "attempt": 2}
+{"time": 1789303880.6128871, "event": "REVIEW", "task": "S10", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303886.994008, "event": "SUBMIT", "task": "S9", "agent": "A2", "attempt": 1}
+{"time": 1789303889.455144, "event": "REVIEW", "task": "S9", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303899.123384, "event": "SUBMIT", "task": "S10", "agent": "A3", "attempt": 3}
+{"time": 1789303899.1804411, "event": "SUBMIT", "task": "N4", "agent": "A1", "attempt": 1}
+{"time": 1789303900.2140338, "event": "REVIEW", "task": "N4", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303901.272573, "event": "REVIEW", "task": "S10", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303913.705269, "event": "SUBMIT", "task": "S9", "agent": "A2", "attempt": 2}
+{"time": 1789303914.089837, "event": "SUBMIT", "task": "N5", "agent": "A1", "attempt": 1}
+{"time": 1789303915.341274, "event": "REVIEW", "task": "N5", "agent": "A1", "decision": "APPROVE"}
+{"time": 1789303915.938775, "event": "REVIEW", "task": "S9", "agent": "A2", "decision": "REVISE"}
+{"time": 1789303916.084479, "event": "SUBMIT", "task": "S11", "agent": "A3", "attempt": 1}
+{"time": 1789303917.6673799, "event": "REVIEW", "task": "S11", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303917.945974, "event": "WRITER_ACCEPT", "task": "N5", "agent": "A1"}
+{"time": 1789303932.261019, "event": "SUBMIT", "task": "N1", "agent": "A3", "attempt": 1}
+{"time": 1789303933.7372081, "event": "REVIEW", "task": "N1", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303935.908542, "event": "SUBMIT", "task": "N6", "agent": "A1", "attempt": 1}
+{"time": 1789303937.8970802, "event": "REVIEW", "task": "N6", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789303940.34978, "event": "SUBMIT", "task": "S9", "agent": "A2", "attempt": 3}
+{"time": 1789303941.309814, "event": "REVIEW", "task": "S9", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789303945.560213, "event": "WRITER_ACCEPT", "task": "S9", "agent": "A2"}
+{"time": 1789303951.8950279, "event": "SUBMIT", "task": "N2", "agent": "A3", "attempt": 1}
+{"time": 1789303953.163039, "event": "REVIEW", "task": "N2", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789303953.629632, "event": "SUBMIT", "task": "N7", "agent": "A1", "attempt": 1}
+{"time": 1789303955.311584, "event": "REVIEW", "task": "N7", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303973.039039, "event": "SUBMIT", "task": "S10", "agent": "A2", "attempt": 1}
+{"time": 1789303973.089644, "event": "SUBMIT", "task": "N3", "agent": "A3", "attempt": 1}
+{"time": 1789303974.422082, "event": "SUBMIT", "task": "N7", "agent": "A1", "attempt": 2}
+{"time": 1789303974.674028, "event": "REVIEW", "task": "S10", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789303975.6250062, "event": "REVIEW", "task": "N3", "agent": "A3", "decision": "REVISE"}
+{"time": 1789303976.46912, "event": "REVIEW", "task": "N7", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303992.592206, "event": "SUBMIT", "task": "N7", "agent": "A1", "attempt": 3}
+{"time": 1789303994.728287, "event": "REVIEW", "task": "N7", "agent": "A1", "decision": "REVISE"}
+{"time": 1789303999.204951, "event": "SUBMIT", "task": "S11", "agent": "A2", "attempt": 1}
+{"time": 1789304000.654994, "event": "REVIEW", "task": "S11", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304008.081882, "event": "SUBMIT", "task": "N8", "agent": "A1", "attempt": 1}
+{"time": 1789304009.753284, "event": "REVIEW", "task": "N8", "agent": "A1", "decision": "REVISE"}
+{"time": 1789304017.2434938, "event": "SUBMIT", "task": "N3", "agent": "A3", "attempt": 2}
+{"time": 1789304017.649437, "event": "SUBMIT", "task": "N1", "agent": "A2", "attempt": 1}
+{"time": 1789304019.847956, "event": "REVIEW", "task": "N1", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304020.366262, "event": "REVIEW", "task": "N3", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304026.48368, "event": "SUBMIT", "task": "N8", "agent": "A1", "attempt": 2}
+{"time": 1789304027.6743062, "event": "REVIEW", "task": "N8", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789304038.901957, "event": "SUBMIT", "task": "N1", "agent": "A2", "attempt": 2}
+{"time": 1789304040.189303, "event": "REVIEW", "task": "N1", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304041.863334, "event": "SUBMIT", "task": "N9", "agent": "A1", "attempt": 1}
+{"time": 1789304043.0237591, "event": "REVIEW", "task": "N9", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789304043.326824, "event": "SUBMIT", "task": "N3", "agent": "A3", "attempt": 3}
+{"time": 1789304045.307606, "event": "REVIEW", "task": "N3", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304057.773547, "event": "SUBMIT", "task": "N2", "agent": "A2", "attempt": 1}
+{"time": 1789304059.136749, "event": "REVIEW", "task": "N2", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304060.688816, "event": "SUBMIT", "task": "N10", "agent": "A1", "attempt": 1}
+{"time": 1789304062.330872, "event": "REVIEW", "task": "N10", "agent": "A1", "decision": "REVISE"}
+{"time": 1789304071.497004, "event": "SUBMIT", "task": "N4", "agent": "A3", "attempt": 1}
+{"time": 1789304074.470078, "event": "REVIEW", "task": "N4", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304077.383301, "event": "SUBMIT", "task": "N10", "agent": "A1", "attempt": 2}
+{"time": 1789304078.107898, "event": "REVIEW", "task": "N10", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789304078.467006, "event": "SUBMIT", "task": "N3", "agent": "A2", "attempt": 1}
+{"time": 1789304079.725814, "event": "REVIEW", "task": "N3", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789304082.8483012, "event": "WRITER_ACCEPT", "task": "N3", "agent": "A2"}
+{"time": 1789304090.767563, "event": "MEETING_START"}
+{"time": 1789304093.071147, "event": "SUBMIT", "task": "N4", "agent": "A3", "attempt": 2}
+{"time": 1789304094.076033, "event": "REVIEW", "task": "N4", "agent": "A3", "decision": "APPROVE"}
+{"time": 1789304097.495296, "event": "WRITER_ACCEPT", "task": "N4", "agent": "A3"}
+{"time": 1789304104.930495, "event": "SUBMIT", "task": "N4", "agent": "A2", "attempt": 1}
+{"time": 1789304106.722983, "event": "REVIEW", "task": "N4", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304123.120953, "event": "MEETING_END"}
+{"time": 1789304124.984065, "event": "SUBMIT", "task": "N4", "agent": "A2", "attempt": 2}
+{"time": 1789304127.023989, "event": "REVIEW", "task": "N4", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304142.534081, "event": "SUBMIT", "task": "N5", "agent": "A3", "attempt": 1}
+{"time": 1789304143.933075, "event": "REVIEW", "task": "N5", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304146.7393332, "event": "SUBMIT", "task": "N4", "agent": "A2", "attempt": 3}
+{"time": 1789304148.0579672, "event": "REVIEW", "task": "N4", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304160.1981142, "event": "SUBMIT", "task": "N5", "agent": "A3", "attempt": 2}
+{"time": 1789304161.333261, "event": "REVIEW", "task": "N5", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789304172.334306, "event": "SUBMIT", "task": "N5", "agent": "A2", "attempt": 1}
+{"time": 1789304175.518327, "event": "REVIEW", "task": "N5", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304184.62365, "event": "SUBMIT", "task": "N6", "agent": "A3", "attempt": 1}
+{"time": 1789304186.4404218, "event": "REVIEW", "task": "N6", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789304206.610293, "event": "SUBMIT", "task": "N5", "agent": "A2", "attempt": 2}
+{"time": 1789304207.937428, "event": "REVIEW", "task": "N5", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789304208.964753, "event": "SUBMIT", "task": "N7", "agent": "A3", "attempt": 1}
+{"time": 1789304210.673718, "event": "REVIEW", "task": "N7", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789304213.992125, "event": "WRITER_ACCEPT", "task": "N5", "agent": "A2"}
+{"time": 1789304237.451551, "event": "SUBMIT", "task": "N8", "agent": "A3", "attempt": 1}
+{"time": 1789304239.049463, "event": "REVIEW", "task": "N8", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304243.740677, "event": "SUBMIT", "task": "N6", "agent": "A2", "attempt": 1}
+{"time": 1789304245.441897, "event": "REVIEW", "task": "N6", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304257.252238, "event": "SUBMIT", "task": "N8", "agent": "A3", "attempt": 2}
+{"time": 1789304258.954751, "event": "REVIEW", "task": "N8", "agent": "A3", "decision": "APPROVE"}
+{"time": 1789304260.2903008, "event": "SUBMIT", "task": "N7", "agent": "A2", "attempt": 1}
+{"time": 1789304261.652138, "event": "REVIEW", "task": "N7", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304263.3969972, "event": "WRITER_ACCEPT", "task": "N8", "agent": "A3"}
+{"time": 1789304296.353654, "event": "SUBMIT", "task": "N8", "agent": "A2", "attempt": 1}
+{"time": 1789304299.1428192, "event": "REVIEW", "task": "N8", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304305.0794759, "event": "SUBMIT", "task": "N9", "agent": "A3", "attempt": 1}
+{"time": 1789304306.6222668, "event": "REVIEW", "task": "N9", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304321.6394749, "event": "SUBMIT", "task": "N9", "agent": "A3", "attempt": 2}
+{"time": 1789304323.251483, "event": "REVIEW", "task": "N9", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304332.592919, "event": "SUBMIT", "task": "N8", "agent": "A2", "attempt": 2}
+{"time": 1789304333.826333, "event": "REVIEW", "task": "N8", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789304345.839093, "event": "SUBMIT", "task": "N9", "agent": "A3", "attempt": 3}
+{"time": 1789304347.871503, "event": "REVIEW", "task": "N9", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304355.318443, "event": "SUBMIT", "task": "N9", "agent": "A2", "attempt": 1}
+{"time": 1789304357.87127, "event": "REVIEW", "task": "N9", "agent": "A2", "decision": "REVISE"}
+{"time": 1789304376.6285608, "event": "SUBMIT", "task": "N10", "agent": "A3", "attempt": 1}
+{"time": 1789304380.759906, "event": "SUBMIT", "task": "N9", "agent": "A2", "attempt": 2}
+{"time": 1789304380.8675141, "event": "REVIEW", "task": "N10", "agent": "A3", "decision": "REVISE"}
+{"time": 1789304382.252518, "event": "REVIEW", "task": "N9", "agent": "A2", "decision": "APPROVE"}
+{"time": 1789304387.217671, "event": "WRITER_ACCEPT", "task": "N9", "agent": "A2"}
+{"time": 1789304397.517209, "event": "SUBMIT", "task": "N10", "agent": "A3", "attempt": 2}
+{"time": 1789304398.9182909, "event": "REVIEW", "task": "N10", "agent": "A3", "decision": "APPROVE"}
+{"time": 1789304402.538344, "event": "SUBMIT", "task": "N10", "agent": "A2", "attempt": 1}
+{"time": 1789304402.7150452, "event": "WRITER_ACCEPT", "task": "N10", "agent": "A3"}
+{"time": 1789304403.985554, "event": "REVIEW", "task": "N10", "agent": "A2", "decision": "BLOCKED"}

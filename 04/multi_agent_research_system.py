@@ -82,6 +82,12 @@ class ResearchState(TypedDict, total=False):
 def _model() -> Any:
     from langchain_openai import ChatOpenAI
 
+    env_path = ROOT / ".env"
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            if "=" in line and not line.lstrip().startswith("#"):
+                key, value = line.split("=", 1)
+                os.environ.setdefault(key.strip(), value.strip())
     key = os.environ.get("DEEPSEEK_API_KEY")
     if not key:
         raise RuntimeError("DEEPSEEK_API_KEY is required for a live run")
@@ -179,9 +185,10 @@ Candidate from {submission.agent}:
 class Writer:
     """Incrementally fills a fixed 21-section LaTeX manuscript."""
 
-    def __init__(self, path: Path, tasks: tuple[tuple[str, str], ...]) -> None:
+    def __init__(self, path: Path, tasks: tuple[tuple[str, str], ...], event_path: Path | None = None) -> None:
         self.path = path
         self.tasks = tasks
+        self.event_path = event_path
         self.sections = {key: "% TODO: awaiting an approved proof.\n" for key, _ in tasks}
         self.lock = threading.Lock()
 
@@ -201,6 +208,8 @@ Approved answer:\n{submission.proof}\nReviewer note:\n{feedback}"""
                 + section + "\n"
             )
             self.flush()
+            if self.event_path:
+                _emit(self.event_path, "WRITER_ACCEPT", task=submission.task_id, agent=submission.agent)
 
     def flush(self) -> None:
         body = "\n".join(
@@ -215,9 +224,10 @@ Approved answer:\n{submission.proof}\nReviewer note:\n{feedback}"""
 
 
 class Committee:
-    def __init__(self, writer: Writer, max_revisions: int = 2) -> None:
+    def __init__(self, writer: Writer, max_revisions: int = 2, event_path: Path | None = None) -> None:
         self.writer = writer
         self.max_revisions = max_revisions
+        self.event_path = event_path
         self.history: list[dict[str, Any]] = []
         self.lock = threading.Lock()
 
@@ -225,13 +235,24 @@ class Committee:
         decision, feedback = review(submission)
         with self.lock:
             self.history.append({"task": submission.task_id, "agent": submission.agent, "decision": decision, "feedback": feedback})
+        if self.event_path:
+            _emit(self.event_path, "REVIEW", task=submission.task_id, agent=submission.agent, decision=decision)
         if decision == "APPROVE":
             self.writer.accept(submission, feedback)
         return decision, feedback
 
 
-def run_meeting(contexts: dict[str, AgentContext]) -> str:
+def _emit(path: Path, event: str, **data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record = {"time": time.time(), "event": event, **data}
+    with path.open("a", encoding="utf-8") as stream:
+        stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def run_meeting(contexts: dict[str, AgentContext], event_path: Path | None = None) -> str:
     """Three-turn meeting: A1 speaks, A2 speaks, A3 speaks, then a shared digest."""
+    if event_path:
+        _emit(event_path, "MEETING_START")
     reports: list[str] = []
     for agent in ("A1", "A2", "A3"):
         prompt = f"""You are {agent}. {PROFILES[agent]}
@@ -245,13 +266,18 @@ Reports:\n""" + "\n\n".join(reports)
     for context in contexts.values():
         with context.lock:
             context.meeting_digest = digest
+    if event_path:
+        _emit(event_path, "MEETING_END")
     return digest
 
 
 def run(*, total_seconds: int = 20 * 60, meeting_after: int = 10 * 60, output: Path = RUNTIME / "paper.tex", checkpoint: Path = RUNTIME / "research.sqlite") -> dict[str, Any]:
     tasks = load_tasks()
-    writer = Writer(output, tasks)
-    committee = Committee(writer)
+    progress_path = output.with_suffix(".progress.jsonl")
+    progress_path.parent.mkdir(parents=True, exist_ok=True)
+    progress_path.write_text("", encoding="utf-8")
+    writer = Writer(output, tasks, progress_path)
+    committee = Committee(writer, event_path=progress_path)
     contexts = {agent: AgentContext(agent, profile) for agent, profile in PROFILES.items()}
     deadline = time.monotonic() + total_seconds
     stop = threading.Event()
@@ -267,13 +293,14 @@ def run(*, total_seconds: int = 20 * 60, meeting_after: int = 10 * 60, output: P
         time.sleep(meeting_after)
         if not stop.is_set():
             meeting_started.set()
-            run_meeting(contexts)
+            run_meeting(contexts, progress_path)
             meeting_started.clear()
 
     timer = threading.Thread(target=meeting_timer, daemon=True)
     timer.start()
 
     def worker(context: AgentContext) -> None:
+        _emit(progress_path, "AGENT_START", agent=context.agent)
         for task_id, label in tasks:
             if stop.is_set() or time.monotonic() >= deadline:
                 return
@@ -290,6 +317,7 @@ def run(*, total_seconds: int = 20 * 60, meeting_after: int = 10 * 60, output: P
                 graph = build_task_graph(checkpoint_store)
                 result = graph.invoke(state, config={"configurable": {"thread_id": f"{context.agent}-{task_id}"}})
                 submission = Submission(context.agent, task_id, label, result.get("proof", ""), attempts)
+                _emit(progress_path, "SUBMIT", task=task_id, agent=context.agent, attempt=attempts)
                 decision, feedback = committee.receive(submission)
                 if decision in {"APPROVE", "BLOCKED"}:
                     break

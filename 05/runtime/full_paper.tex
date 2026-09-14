@@ -1,0 +1,802 @@
+\documentclass{article}
+\begin{document}
+\section{S1: Type I(1)}
+% TODO: awaiting an approved proof.
+
+\section{S2: Type I(2)}
+% Submitted by A2; reviewer note: The candidate's assessment is logically sound: it correctly identifies that no complete proof of S2 is produced, and that the decisive steps (Kottwitz determinant condition check, generic Mumford–Tate group identification, 1-dimensionality of the invariant Weil class, algebraicity of ω_F, and existence with prescribed signatures) are either conditional on unproved hypotheses or explicitly open. The reduction via Albert classification and the dimension formula is valid, and the conclusion that S2 remains a conjecture is appropriately supported. No serious logical error or unsupported key step is present in the meta-claim that S2 is unproved.
+\section*{S2: Type I(2) for six-dimensional abelian varieties}
+
+\noindent\textbf{Status:} Conjecture (not proved).
+
+\medskip
+
+\noindent\textbf{Claim.} S2 is not proved. The plan correctly reduces S2 to the following
+ingredients:
+\begin{enumerate}
+  \item[(i)] a finite combinatorial check of admissible local Hodge signature
+    tuples for a totally real cubic field $F$, $n=2$, $\dim A=6$, subject to
+    Kottwitz's determinant condition;
+  \item[(ii)] the expectation that the generic Mumford--Tate group is
+    $\mathrm{Res}_{F/\mathbb{Q}}\,U(2,2)$ for non-degenerate tuples;
+  \item[(iii)] the expectation that $H^4(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is
+    $1$-dimensional, spanned by an $F$-linear Weil class $\omega_F$;
+  \item[(iv)] the open question whether $\omega_F$ is algebraic (expected to
+    fail generically);
+  \item[(v)] the conditional existence of $A$ with $\mathrm{End}^0(A)=F$ and
+    prescribed signatures.
+\end{enumerate}
+No complete proof is produced; the decisive steps are either conditional on
+standard but unproved hypotheses or explicitly open.
+
+\medskip
+
+\noindent\textbf{Conditional reduction.} The candidate argument is conditional
+and proceeds as follows.
+\begin{enumerate}
+  \item By Albert classification (K1), for $A$ simple of Type I,
+    $D=\mathrm{End}^0(A)$ is a totally real field $F$, the Rosati involution is
+    the identity, and $n=\tfrac12\dim_F H^1(A,\mathbb{Q})$ is a positive
+    integer.
+  \item By the dimension formula (K2), $\dim A=[F:\mathbb{Q}]\cdot n$. For
+    $\dim A=6$ and $n=2$, this forces $[F:\mathbb{Q}]=3$. Thus the target is a
+    six-dimensional simple abelian variety $A$ with
+    $\mathrm{End}^0(A)=F$ a totally real cubic field, $n=2$, Rosati equal to
+    the identity.
+  \item By Hodge structure (K3), $H^1(A,\mathbb{Q})$ is a free $F$-module of
+    rank $2n=4$. At each real place $v$ of $F$, the local Hodge signature is a
+    partition $(h^{1,0}_v,h^{0,1}_v)$ with sum $4$. Since $F$ is totally real,
+    there is no conjugate-place pairing; each of the three real places
+    independently carries a signature in
+    $\{(4,0),(3,1),(2,2),(1,3),(0,4)\}$.
+  \item Kottwitz's determinant condition (K4) imposes a finiteness/positivity
+    constraint on which signature tuples are realizable. This is a finite
+    combinatorial check; the plan does not carry it out explicitly, so the
+    admissible tuples are not enumerated here.
+  \item For non-degenerate tuples (no place with signature $(4,0)$ or
+    $(0,4)$), the generic Mumford--Tate group is expected to be
+    $G_{\mathrm{MT}}=\mathrm{Res}_{F/\mathbb{Q}}\,U(2,2)$ (or $SU(2,2)$ modulo
+    scalars), by K5. This is conditional on C1, which is a standard expectation
+    but not proved in the plan.
+  \item By K6 and C2, $H^4(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is expected to be
+    $1$-dimensional, spanned by an $F$-linear Weil class $\omega_F$. This is
+    conditional on C1 and on standard Weil-class formalism.
+  \item The algebraicity of $\omega_F$ in $H^4(A,\mathbb{Q})$ is open (C3). For
+    generic $A$, it is expected to fail. This is the conjectural core of S2.
+  \item Existence of $A$ with $\mathrm{End}^0(A)=F$ (not just $\supseteq F$)
+    and prescribed signatures is governed by K4 and C4; it is conditional and
+    not automatic.
+\end{enumerate}
+Therefore S2 is not proved; it is a conditional reduction together with a list
+of open problems.
+
+\medskip
+
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+  \item[\textbf{K1}] (Albert classification) Type I means
+    $D=\mathrm{End}^0(A)$ is a totally real field $F$, the Rosati involution is
+    the identity, and $n=\tfrac12\dim_F H^1(A,\mathbb{Q})$ is a positive
+    integer.
+  \item[\textbf{K2}] (Dimension formula) $\dim A=[F:\mathbb{Q}]\cdot n$.
+  \item[\textbf{K3}] (Hodge structure) $H^1(A,\mathbb{Q})$ is a free
+    $F$-module of rank $2n$; local Hodge signatures at real places of $F$ are
+    partitions of $2n$.
+  \item[\textbf{K4}] (Kottwitz determinant condition) A signature tuple is
+    realizable iff it satisfies the determinant condition for the relevant
+    Shimura variety.
+  \item[\textbf{K5}] (Mumford--Tate) For Type I, the generic Mumford--Tate
+    group is a form of $\mathrm{Res}_{F/\mathbb{Q}}\,U(n,n)$ (or $SU(n,n)$
+    modulo scalars) for sufficiently non-degenerate signatures.
+  \item[\textbf{K6}] (Weil classes) For Type I with $n=2$, one expects a
+    $1$-dimensional space of $F$-linear Weil classes in $H^4(A,\mathbb{Q})$.
+  \item[\textbf{C1}] (Conjectural) The generic Mumford--Tate group is exactly
+    $\mathrm{Res}_{F/\mathbb{Q}}\,U(2,2)$ for a generic member of the relevant
+    Shimura variety.
+  \item[\textbf{C2}] (Conjectural) $H^4(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is
+    $1$-dimensional, spanned by an $F$-linear Weil class $\omega_F$.
+  \item[\textbf{C3}] (Open) Algebraicity of $\omega_F$ in $H^4(A,\mathbb{Q})$
+    is open; expected to fail for generic $A$.
+  \item[\textbf{C4}] (Conditional) Existence of $A$ with
+    $\mathrm{End}^0(A)=F$ and prescribed signatures is governed by K4 and the
+    structure of the Shimura variety.
+\end{itemize}
+
+\medskip
+
+\noindent\textbf{Gap.} The proof is incomplete. The decisive steps are not
+established:
+\begin{enumerate}
+  \item[(i)] the finite combinatorial check of Kottwitz's determinant
+    condition is not carried out, so the admissible signature tuples are not
+    enumerated;
+  \item[(ii)] the identification of the generic Mumford--Tate group as exactly
+    $\mathrm{Res}_{F/\mathbb{Q}}\,U(2,2)$ is conditional on C1 and not proved;
+  \item[(iii)] the $1$-dimensionality of $H^4(A,\mathbb{Q})^{G_{\mathrm{MT}}}$
+    and the existence of the Weil class $\omega_F$ are conditional on C1 and
+    C2;
+  \item[(iv)] the algebraicity of $\omega_F$ is open (C3) and is the
+    conjectural core;
+  \item[(v)] the existence of $A$ with $\mathrm{End}^0(A)=F$ and prescribed
+    signatures is conditional on C4.
+\end{enumerate}
+No unconditional theorem is produced.
+
+\section{S3: Type I(3)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and does not claim to prove S3. The mathematical reduction steps (Albert classification, dimension formula, local Hodge signatures, Kottwitz determinant condition) are standard and correctly applied at the level of a conditional plan. The decisive steps are clearly identified as conjectural or open (C1–C4), and no unsupported claim of a complete proof is made. There is no serious logical error in the conditional reduction itself; the candidate accurately reports that S3 remains unproved.
+\section*{S3: Type I(3)}
+
+\noindent\textbf{Status:} Conjecture (not proved).
+
+\medskip
+
+\noindent\textbf{Claim.} S3, the Type I(3) case for six-dimensional abelian varieties, is not proved. The plan reduces S3 to the following items:
+\begin{enumerate}
+  \item[(i)] a finite combinatorial check of admissible local Hodge signature tuples for a real quadratic field $F$, with $n=3$ and $\dim A=6$, subject to Kottwitz's determinant condition;
+  \item[(ii)] the expectation that the generic Mumford--Tate group is $\mathrm{Res}_{F/\mathbb{Q}}\, U(3,3)$ for non-degenerate tuples;
+  \item[(iii)] the expectation that $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is $1$-dimensional, spanned by an $F$-linear Weil class $\omega_F$;
+  \item[(iv)] the open question whether $\omega_F$ is algebraic, expected to fail generically;
+  \item[(v)] the conditional existence of $A$ with $\mathrm{End}^0(A)=F$ and prescribed signatures.
+\end{enumerate}
+No complete proof is produced; the decisive steps are either conditional on standard but unproved hypotheses or explicitly open.
+
+\medskip
+
+\noindent\textbf{Conditional reduction.} The candidate argument is conditional and proceeds as follows.
+
+\begin{enumerate}
+  \item By Albert classification (K1), for $A$ simple of Type I, $D=\mathrm{End}^0(A)$ is a totally real field $F$, the Rosati involution is the identity, and
+  \[
+    n=\tfrac12 \dim_F H^1(A,\mathbb{Q})
+  \]
+  is a positive integer.
+
+  \item By the dimension formula (K2),
+  \[
+    \dim A=[F:\mathbb{Q}]\cdot n.
+  \]
+  For $\dim A=6$ and $n=3$, this forces $[F:\mathbb{Q}]=2$. Thus the target is a six-dimensional simple abelian variety $A$ with $\mathrm{End}^0(A)=F$ a real quadratic field, $n=3$, and Rosati involution equal to the identity.
+
+  \item By Hodge structure (K3), $H^1(A,\mathbb{Q})$ is a free $F$-module of rank $2n=6$. At each real place $v$ of $F$, the local Hodge signature is a partition
+  \[
+    (h^{1,0}_v,h^{0,1}_v)
+  \]
+  with sum $6$. Since $F$ is totally real, there is no conjugate-place pairing; each of the two real places independently carries a signature in
+  \[
+    \{(6,0),(5,1),(4,2),(3,3),(2,4),(1,5),(0,6)\}.
+  \]
+
+  \item Kottwitz's determinant condition (K4) imposes a finiteness/positivity constraint on which signature tuples are realizable. This is a finite combinatorial check ($7\times 7=49$ tuples, reduced by symmetry). The plan does not carry out this check; it only asserts that it is a finite combinatorial task.
+
+  \item For non-degenerate signature tuples, the generic Mumford--Tate group is expected to be
+  \[
+    G_{\mathrm{MT}}=\mathrm{Res}_{F/\mathbb{Q}}\, U(3,3)
+  \]
+  (or $SU(3,3)$ modulo scalars). This is C1, explicitly conjectural.
+
+  \item For such $G_{\mathrm{MT}}$, $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is expected to be $1$-dimensional, spanned by an $F$-linear Weil class $\omega_F$. This is C2, explicitly conjectural.
+
+  \item The algebraicity of $\omega_F$ in $H^{12}(A,\mathbb{Q})$ is open (C3), expected to fail generically. No proof is given.
+
+  \item Existence of $A$ with $\mathrm{End}^0(A)=F$ and a given admissible signature tuple is governed by Kottwitz's determinant condition and is not automatic (C4). No unconditional existence proof is supplied.
+\end{enumerate}
+
+Therefore the candidate is a conditional reduction plus a list of open problems, not a proof of S3.
+
+\medskip
+
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+  \item[(K1)] Albert classification: Type I means $\mathrm{End}^0(A)=F$ totally real, Rosati involution equal to the identity.
+  \item[(K2)] Dimension formula: $\dim A=[F:\mathbb{Q}]\cdot n$.
+  \item[(K3)] Hodge structure: local signatures at real places, with no conjugate-place pairing for totally real $F$.
+  \item[(K4)] Kottwitz determinant condition: constrains admissible signature tuples.
+  \item[(C1)] Conjectural: generic $G_{\mathrm{MT}}=\mathrm{Res}_{F/\mathbb{Q}}\, U(3,3)$ for non-degenerate tuples.
+  \item[(C2)] Conjectural: $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is $1$-dimensional, spanned by $\omega_F$.
+  \item[(C3)] Open: algebraicity of $\omega_F$, expected to fail generically.
+  \item[(C4)] Conditional: existence via Kottwitz determinant condition.
+\end{itemize}
+
+\medskip
+
+\noindent\textbf{Gap.} The proof is incomplete because the decisive steps are not proved:
+\begin{enumerate}
+  \item the admissible signature enumeration under Kottwitz's determinant condition is not carried out;
+  \item the generic Mumford--Tate group identification is conjectural (C1);
+  \item the dimension and identification of the Weil class space is conjectural (C2);
+  \item the algebraicity question is open (C3);
+  \item existence for each admissible tuple is conditional (C4).
+\end{enumerate}
+No unconditional theorem about S3 is established.
+
+\section{S4: Type I(6)}
+% Submitted by A3; reviewer note: The Type I(6) specialization is logically sound: with a single simple isogeny factor, the Künneth decomposition of H^6(A,Q) has only the pure summand H^6(A_1,Q), so the mixed cross-Künneth hypotheses HC-2/HC-3 and the multiplicity hypotheses HC-4/HC-5 are indeed vacuous. The reduction to K3 (Tankeev/Ribet Lefschetz generation for Type I) is an explicitly cited external theorem, not an unsupported key step. The candidate is honestly labeled CONJECTURE and does not claim a complete proof of the global statement. No serious logical error or unsupported essential step is present for the stated Type I(6) case.
+\section*{S4: Type I(6)}
+
+\paragraph{Status.} The statement below is a \emph{conjecture}. The Type~I(6) specialization is unconditional given the cited external theorem K3 (Tankeev--Ribet); the global statement for arbitrary $A$ of dimension $6$ remains conditional on the unproved hypotheses HC-2, HC-3, HC-4, HC-5 and on C2.
+
+\paragraph{Conjecture (Type I(6)).}
+Let $A$ be a complex abelian variety of dimension $6$, isogenous to $\prod_i A_i^{m_i}$ with each $A_i$ simple. Let $E^\bullet \subset H^\bullet(A,\mathbb{Q})$ be the $\mathbb{Q}$-subalgebra generated by
+\begin{enumerate}
+  \item[(i)] Lefschetz/divisor classes and their powers;
+  \item[(ii)] pullbacks $\pi_i^* H^\bullet(A_i^{m_i},\mathbb{Q})$ for each isogeny factor;
+  \item[(iii)] for each simple Type~IV factor $A_i$ of dimension $d_i$, the Weil classes in $H^{d_i}(A_i,\mathbb{Q})$ and their K\"unneth products.
+\end{enumerate}
+Then
+\[
+H^6(A,\mathbb{Q}) \cap \mathrm{Hodge} \;=\; E^6.
+\]
+Equivalently, no mixed cross-K\"unneth Hodge classes exist beyond $E^6$.
+
+\paragraph{Proof sketch for Type I(6) (conditional on K3).}
+This is not a complete proof of the global conjecture; it relies on the unproved Hard Core statements HC-2, HC-3, HC-4, HC-5 and on the explicit Type~IV dimension-$6$ Weil-class bookkeeping C2. For Type~I(6) these hypotheses are vacuous, and the argument reduces to the cited theorem K3.
+
+\emph{Step 1 (K\"unneth reduction, unconditional).} By Poincar\'e reducibility (K2), $A$ is isogenous to $\prod_i A_i^{m_i}$ with each $A_i$ simple. By K\"unneth (K1),
+\[
+H^6(A,\mathbb{Q}) \;=\; \bigoplus_{\sum p_i = 6} \bigotimes_i H^{p_i}(A_i^{m_i},\mathbb{Q})
+\]
+as Hodge structures. By K6, Hodge classes in a direct sum are sums of Hodge classes in the summands, so it suffices to classify Hodge classes in each K\"unneth summand. Split the summands into \emph{pure} summands (at most one $p_i > 0$) and \emph{mixed} summands (at least two $p_i > 0$).
+
+\emph{Step 2 (Type I(6) specialization).} For Type~I(6), $A$ is isogenous to a single simple abelian variety $A_1$ of dimension $6$ with $m_1 = 1$. The only pure summand is $H^6(A_1,\mathbb{Q})$. All other summands would be mixed cross-K\"unneth summands of the form $H^{p_1}(A_1,\mathbb{Q}) \otimes H^{p_2}(A_2,\mathbb{Q}) \otimes \cdots$ with at least two nonzero $p_i$; since there is only one isogeny factor, no such summand occurs. Thus the K\"unneth decomposition is trivial:
+\[
+H^6(A,\mathbb{Q}) \;=\; H^6(A_1,\mathbb{Q}).
+\]
+
+\emph{Step 3 (Pure summand for Type I, via K3).} For the pure summand $H^6(A_1,\mathbb{Q})$ with $A_1$ of Type~I: by K3, Hodge classes on $A_1$ are generated by Lefschetz classes. Since $m_1 = 1$, HC-4 is vacuous; HC-5 is vacuous for Type~I. Hence
+\[
+H^6(A_1,\mathbb{Q}) \cap \mathrm{Hodge}
+\]
+is generated by Lefschetz classes, which lie in $E^6$. This step is unconditional for Type~I(6) given K3.
+
+\emph{Step 4 (Mixed summands, vacuous).} For Type~I(6) there are no mixed summands because there is only one isogeny factor. The mixed cross-K\"unneth vanishing HC-3 is therefore vacuous, and HC-2 is likewise vacuous.
+
+\emph{Step 5 (Conclusion for Type I(6)).} Combining Steps 1--4, for $A$ of Type~I(6),
+\[
+H^6(A,\mathbb{Q}) \cap \mathrm{Hodge}
+\;=\; H^6(A_1,\mathbb{Q}) \cap \mathrm{Hodge}
+\;=\; \text{Lefschetz-generated classes}
+\;=\; E^6.
+\]
+This is unconditional for Type~I(6) given K3 (Tankeev/Ribet). The global conjecture for arbitrary $A$ of dimension $6$ remains conditional on HC-2, HC-3, HC-4, HC-5 and C2 for the other Albert types and mixed K\"unneth patterns.
+
+\paragraph{Assumptions.}
+\begin{itemize}
+  \item[K1:] K\"unneth decomposition of $H^6(A,\mathbb{Q})$ as Hodge structures.
+  \item[K2:] Poincar\'e reducibility: $A$ is isogenous to $\prod_i A_i^{m_i}$ with $A_i$ simple.
+  \item[K3:] For $A_i$ of Type~I, II, or III, Hodge classes on $A_i$ are generated by Lefschetz classes (Tankeev/Ribet).
+  \item[K6:] Hodge classes in a direct sum are sums of Hodge classes in summands.
+  \item[Type I(6):] $A$ is isogenous to a single simple abelian variety of dimension $6$ with Albert Type~I, so $m_1 = 1$ and there is only one isogeny factor.
+  \item[HC-2, HC-3, HC-4, HC-5:] named unproved hypotheses; they are vacuous for Type~I(6) with $m_1 = 1$ and a single factor.
+  \item[C2:] Type~IV Weil-class bookkeeping; not needed for Type~I(6).
+\end{itemize}
+
+\paragraph{Gap.}
+The proof for Type~I(6) is unconditional given K3, because the K\"unneth decomposition has only one summand $H^6(A_1,\mathbb{Q})$ and Type~I Hodge classes are Lefschetz-generated by K3. However, the global conjecture for arbitrary $A$ of dimension $6$ remains conditional on HC-2, HC-3, HC-4, HC-5 and C2. For Type~I(6) specifically, those statements are vacuous, but the global claim is still a conjecture. No theorem is claimed.
+
+\section{S5: Type II(1)}
+% Submitted by A2; reviewer note: The core mathematical argument is sound: the dimension formula 2·dim A = [D:Q]^{1/2}·dim_D H^1(A,Q) with [D:Q]=4g correctly yields dim A = √g·n, so dim A=6 forces g to be a perfect square dividing 36, ruling out g=6. The remaining claims (Mumford–Tate group, Weil class algebraicity, Kottwitz existence) are explicitly labeled conjectural/open, so they are not presented as proved key steps. No serious logical error or unsupported step is asserted as established.
+\section{Type II(1): The Case $[F:\mathbb{Q}]=6$ is Vacuous}
+\label{sec:type-II-1}
+
+\paragraph{Status.}
+The results in this section are \emph{conjectural} except for the dimension
+obstruction recorded in \S\ref{sec:II1-dim}, which is unconditional. In
+particular, the Mumford--Tate and Weil-class statements below are not proved
+here.
+
+\subsection{Setup and the dimension obstruction}
+\label{sec:II1-dim}
+
+Let $A$ be a simple abelian variety of dimension $6$ with
+$\mathrm{End}^0(A) = D$, where $D$ is a totally indefinite quaternion
+division algebra over a totally real field $F$, so that $A$ has Albert
+Type II(1). Write $g = [F:\mathbb{Q}]$, so that $[D:\mathbb{Q}] = 4g$.
+
+By the Albert classification, the Rosati involution is positive and acts as
+the standard involution on each $\mathrm{M}_2(\mathbb{R})$ factor. The
+standard dimension formula for a simple abelian variety with
+$\mathrm{End}^0(A) = D$ gives
+\begin{equation}
+\label{eq:II1-dimformula}
+2\dim A \;=\; [D:\mathbb{Q}]^{1/2}\cdot \dim_D H^1(A,\mathbb{Q}).
+\end{equation}
+Since $[D:\mathbb{Q}]^{1/2} = 2\sqrt{g}$, writing
+$n := \dim_D H^1(A,\mathbb{Q}) \in \mathbb{Z}_{>0}$ yields
+\begin{equation}
+\label{eq:II1-dimA}
+\dim A \;=\; \sqrt{g}\cdot n .
+\end{equation}
+
+\begin{proposition}[Unconditional dimension obstruction]
+\label{prop:II1-vacuous}
+If $\dim A = 6$, then $g = [F:\mathbb{Q}]$ is a perfect square dividing
+$36$. Consequently $g \in \{1,4,9,36\}$, with corresponding
+$n = 6/\sqrt{g} \in \{6,3,2,1\}$. In particular, the original formulation
+with $[F:\mathbb{Q}] = 6$ is \emph{vacuous}: no such $A$ exists.
+\end{proposition}
+
+\begin{proof}
+By \eqref{eq:II1-dimA}, $\sqrt{g}\cdot n = 6$ with $n \in \mathbb{Z}_{>0}$.
+Hence $\sqrt{g} = 6/n$ is rational, so $g$ is a perfect square, and
+$g \mid 36$. The perfect squares dividing $36$ are $1,4,9,36$, giving the
+stated values of $n$. Since $6$ is not a perfect square, $g=6$ is
+impossible.
+\end{proof}
+
+\subsection{Conjectural structure of the Mumford--Tate group}
+\label{sec:II1-MT}
+
+For each feasible $g \in \{1,4,9,36\}$, the rational Hodge structure
+$H^1(A,\mathbb{Q})$ is a $D$-module of rank $n = 6/\sqrt{g}$. The Hodge
+group $G_{\mathrm{MT}}$ is a $\mathbb{Q}$-reductive subgroup of the
+$D$-linear symplectic group (a form of $\mathrm{Sp}_{2n}$ over $F$,
+restricted to $\mathbb{Q}$). Since $D$ acts by endomorphisms,
+$G_{\mathrm{MT}}$ contains a form of $\mathrm{Res}_{F/\mathbb{Q}}\,
+\mathrm{SL}_2$.
+
+\begin{conjecture}[Generic Mumford--Tate group]
+\label{conj:II1-MT}
+For each feasible $g$, the generic Mumford--Tate group is
+$\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2$, or the appropriate
+$D$-linear form thereof; that is, no additional Hodge cycles occur beyond
+those forced by the $D$-action. This is the Mumford--Tate conjecture in
+this setting and is not proved here.
+\end{conjecture}
+
+\subsection{Conjectural Weil class}
+\label{sec:II1-Weil}
+
+The Weil class $\omega \in H^{12}(A,\mathbb{Q})$ is a Hodge class of type
+$(6,6)$. If $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2$,
+then the space of Hodge classes
+$\bigl(H^{12}(A,\mathbb{Q})\bigr)^{G_{\mathrm{MT}}}$ is expected to be
+one-dimensional, spanned by $\omega$.
+
+\begin{conjecture}[Algebraicity of the Weil class]
+\label{conj:II1-Weil}
+Whether $\omega$ is algebraic is open. In the rank-$1$ case $g=36$,
+$n=1$, the $D$-module structure is tightest and $\omega$ is expected to be
+non-algebraic, analogous to the Type I(1) expectation.
+\end{conjecture}
+
+\subsection{Conjectural existence}
+\label{sec:II1-existence}
+
+Existence of such $A$ for a fixed $F$ is a PEL moduli problem. The
+relevant Shimura variety has expected dimension determined by the PEL
+datum, and non-emptiness for a given $F$ is controlled by local--global
+conditions, notably Kottwitz's determinant condition.
+
+\begin{conjecture}[Existence is not automatic]
+\label{conj:II1-existence}
+It is not established that every feasible $F$ occurs; existence for a
+given $F$ depends on Kottwitz's determinant condition.
+\end{conjecture}
+
+\subsection{Summary of proof status}
+\label{sec:II1-summary}
+
+The dimension obstruction of Proposition~\ref{prop:II1-vacuous} is
+unconditional and rigorously rules out the original case
+$[F:\mathbb{Q}] = 6$. The remaining assertions---the exact generic
+Mumford--Tate group for each feasible $g$
+(Conjecture~\ref{conj:II1-MT}), the algebraicity of the Weil class
+(Conjecture~\ref{conj:II1-Weil}), and the precise Kottwitz determinant
+condition and non-emptiness for a given $F$
+(Conjecture~\ref{conj:II1-existence})---are open and conjectural. No
+complete proof of the Mumford--Tate conjecture or of the algebraicity of
+the Weil class is provided; the argument is conditional and only outlines
+the expected route.
+
+\section{S6: Type II(3)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the 'proof' is a conditional outline, not a purported complete proof. The mathematical core is sound: the dimension formula dim A = sqrt([F:Q])·n correctly forces [F:Q] to be a square, so [F:Q]=6 is impossible and the feasible degrees are {1,4,9,36}. The stated gaps (Mumford–Tate conjecture in higher rank, non-algebraicity of the Weil class, existence via Kottwitz) are accurately identified as open. No serious logical error or unsupported key step is presented as established. The only caveat is that the claim's higher-rank assertions about G_MT being forced to be proper are speculative, but this is acknowledged in the text and does not constitute a false proof.
+\section{Type II(3)}\label{sec:type-II-3}
+
+\medskip
+\noindent\textbf{Status.} Conjecture (conditional outline; no complete proof).
+
+\medskip
+\noindent\textbf{Claim.}
+For a six-dimensional simple abelian variety $A$ of Albert Type II(3) with
+$\operatorname{End}^0(A) = D$ a totally indefinite quaternion division algebra
+over a totally real field $F$, the literal formulation with $[F:\mathbb{Q}] = 6$
+is vacuous: no such $A$ exists. The corrected feasible cases have
+\[
+[F:\mathbb{Q}] \in \{1,\,4,\,9,\,36\},
+\qquad
+\dim_D H^1(A,\mathbb{Q}) \;=\; \frac{6}{\sqrt{[F:\mathbb{Q}]}} \;\in\; \{6,\,3,\,2,\,1\}.
+\]
+In the rank-$1$ case ($[F:\mathbb{Q}] = 36$, $n = 1$), the generic Mumford--Tate
+group is expected to be
+\[
+G_{\mathrm{MT}} \;=\; \operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2
+\quad\bigl(\text{equivalently } \operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2,D}\bigr),
+\]
+and the Weil class in $H^{12}(A,\mathbb{Q})$ is expected to be non-algebraic.
+In the higher-rank cases ($[F:\mathbb{Q}] \in \{9,4,1\}$), the signature condition
+of Type II(3) is expected to force $G_{\mathrm{MT}}$ to be a proper subgroup of
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2n,D}$, and the algebraicity of the
+Weil class is open. Existence for a given $F$ is governed by Kottwitz's determinant
+condition and is not automatic.
+
+\medskip
+\noindent\textbf{Conditional outline.}
+No complete proof is produced; the following is a conditional argument.
+
+\begin{enumerate}
+\item By the Albert classification, $D = \operatorname{End}^0(A)$ is a totally
+indefinite quaternion division algebra over a totally real field $F$, with
+$[D:\mathbb{Q}] = 4[F:\mathbb{Q}]$. The Rosati involution is positive and acts as
+the standard quaternion conjugation on each $M_2(\mathbb{R})$ factor. The label
+Type II(3) refers to the signature/positivity pattern of the involution at the real
+places of $F$, not to a separate algebra class.
+
+\item The dimension formula gives
+\[
+2\dim A \;=\; [D:\mathbb{Q}]^{1/2}\cdot \dim_D H^1(A,\mathbb{Q}).
+\]
+Since $[D:\mathbb{Q}]^{1/2} = 2\sqrt{[F:\mathbb{Q}]}$, we obtain
+\[
+\dim A \;=\; \sqrt{[F:\mathbb{Q}]}\cdot n,
+\qquad
+n := \dim_D H^1(A,\mathbb{Q}) \in \mathbb{Z}_{>0}.
+\]
+
+\item For $\dim A = 6$ we require $\sqrt{[F:\mathbb{Q}]}\cdot n = 6$. Since $n$ is a
+positive integer, $\sqrt{[F:\mathbb{Q}]}$ must be rational, hence $[F:\mathbb{Q}]$ must
+be a perfect square. The perfect squares dividing $36$ are
+$[F:\mathbb{Q}] \in \{1,4,9,36\}$, with corresponding
+$n = 6/\sqrt{[F:\mathbb{Q}]} \in \{6,3,2,1\}$. In particular $[F:\mathbb{Q}] = 6$ is
+impossible because $\sqrt{6}$ is irrational; this kills the literal statement as
+formulated.
+
+\item For each feasible $[F:\mathbb{Q}]$, the rational Hodge structure
+$H^1(A,\mathbb{Q})$ is a left $D$-module of rank $n$. The Mumford--Tate group
+$G_{\mathrm{MT}}$ is a $\mathbb{Q}$-reductive subgroup of the $D$-linear symplectic
+similitude group $\operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2n,D}$. Since $D$ acts
+by endomorphisms, $G_{\mathrm{MT}}$ contains the $D$-linear scalars, i.e.\
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ embedded diagonally when $n = 1$;
+more generally it contains the quaternionic symplectic subgroup.
+
+\item \emph{Rank-$1$ case} ($[F:\mathbb{Q}] = 36$, $n = 1$). Here $H^1(A,\mathbb{Q})$ is
+a $1$-dimensional $D$-module, and the Hodge structure is a quaternionic line. The Hodge
+group is contained in $\operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2,D} \cong
+\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$. By the work of Tankeev and Ribet, the
+Hodge group is full for generic $A$. By Faltings' theorem (Tate conjecture for abelian
+varieties over number fields), the Mumford--Tate group equals the Hodge group. Hence
+$G_{\mathrm{MT}} = \operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ generically. This
+part is conditional on the cited results but is the expected theorem.
+
+\item \emph{Weil class in the rank-$1$ case.} The Weil class
+$\omega \in H^{12}(A,\mathbb{Q})$ is a Hodge class of type $(6,6)$. If
+$G_{\mathrm{MT}} = \operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$, then by invariant
+theory the space $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is spanned by the Lefschetz
+class $L^6$. If $\omega$ is not a multiple of $L^6$, then $\omega$ is not algebraic.
+This is expected but not proved unconditionally; it depends on the Mumford--Tate
+conjecture and on the verification that $\omega$ is not a Lefschetz class.
+
+\item \emph{Higher-rank cases} ($[F:\mathbb{Q}] \in \{9,4,1\}$). The signature condition
+of Type II(3) is non-uniform across the real places of $F$. This non-uniformity is
+expected to force $G_{\mathrm{MT}}$ to be a proper subgroup of
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2n,D}$, possibly a product of
+$\mathrm{SL}_2$'s over a subfield $F' \subseteq F$ or a unitary group $U(1,1)$ over a CM
+extension $E/F'$. If $G_{\mathrm{MT}}$ is smaller, the space of Hodge classes
+$H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ may be larger, so $\omega$ may be algebraic.
+This remains open.
+
+\item \emph{Existence.} For a given totally real field $F$ of degree $36$ (or $9$, $4$,
+$1$), the existence of a simple abelian variety $A$ of Type II(3) with
+$\operatorname{End}^0(A) = D$ and $\dim A = 6$ is a PEL moduli problem. Non-emptiness is
+governed by Kottwitz's determinant condition and local-global obstructions. It is not
+automatic for every $F$.
+\end{enumerate}
+
+Thus the argument is a conditional outline, not a complete proof. The rank-$1$ case is
+the primary target, and the expected conclusion is that
+$G_{\mathrm{MT}} = \operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ and $\omega$ is not
+algebraic, but this remains conjectural.
+
+\medskip
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+\item Albert classification of endomorphism algebras of abelian varieties.
+\item Dimension formula $2\dim A = [D:\mathbb{Q}]^{1/2}\cdot \dim_D H^1(A,\mathbb{Q})$.
+\item $H^1(A,\mathbb{Q})$ is a left $D$-module and
+$G_{\mathrm{MT}} \subseteq \operatorname{Res}_{F/\mathbb{Q}} \mathrm{Sp}_{2n,D}$.
+\item $G_{\mathrm{MT}}$ contains the $D$-linear scalars, including
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ when $n = 1$.
+\item The Weil class $\omega \in H^{12}(A,\mathbb{Q})$ is a Hodge class of type
+$(6,6)$.
+\item Tankeev--Ribet theorem on the Hodge group for Type II rank-$1$ abelian varieties.
+\item Faltings' theorem (Tate conjecture for abelian varieties over number fields) to
+identify Mumford--Tate and Hodge groups.
+\item Invariant theory: if $G_{\mathrm{MT}} = \operatorname{Res}_{F/\mathbb{Q}}
+\mathrm{SL}_2$, then $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is spanned by the
+Lefschetz class.
+\item Kottwitz's determinant condition governs existence of PEL moduli.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Gap.}
+The proof is incomplete and conditional. The main gaps are:
+(1) the Mumford--Tate conjecture for Type II abelian varieties is known only in the
+rank-$1$ case via Tankeev--Ribet and Faltings; for higher rank it remains open;
+(2) the precise signature condition for Type II(3) is not pinned down, so the
+description of $G_{\mathrm{MT}}$ in higher-rank cases is conjectural;
+(3) the non-algebraicity of the Weil class in the rank-$1$ case depends on verifying
+that $\omega$ is not a multiple of the Lefschetz class, which is not done
+unconditionally;
+(4) existence for a given $F$ is not established; Kottwitz's determinant condition must
+be checked case by case, and local obstructions may occur;
+(5) the literal statement with $[F:\mathbb{Q}] = 6$ is vacuous, so the original
+formulation must be redirected to the feasible cases.
+
+\section{S7: Type III(1)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and does not claim a complete proof. The only unconditional mathematical step is the dimension/vacuity argument: for a simple abelian variety A with End^0(A)=D of Albert Type III(1), [D:Q]=4[F:Q], and 2 dim A = [D:Q]^{1/2} dim_D H^1(A,Q), so dim A = sqrt([F:Q]) n. For dim A=6 this forces [F:Q] to be a square dividing 36, hence [F:Q] ∈ {1,4,9,36}; in particular [F:Q]=6 is impossible. This step is logically sound and supports the stated vacuity of the literal [F:Q]=6 formulation. The remaining claims about the Mumford–Tate group, Weil class algebraicity, and existence are clearly marked as expected/conjectural and are not presented as proved. No serious unsupported key step is being passed off as a theorem.
+\section*{S7: Type III(1)}
+
+\noindent\textbf{Status: CONJECTURE.} The results below are conditional; only the vacuity statement in \S\ref{sec:vacuity} is unconditional.
+
+\subsection*{Setup and conventions}
+
+Let $A$ be a simple abelian variety of dimension $6$ with $\mathrm{End}^0(A) = D$, a totally definite quaternion division algebra over a totally real field $F$, so that $A$ has Albert Type III. We interpret the label \emph{Type III(1)} as the \emph{uniform Hodge-signature condition}: at every real place $v$ of $F$, the $D_v = \mathbb{H}$-module $H^1(A,\mathbb{Q}) \otimes \mathbb{R}$ has the same Hodge type
+\[
+(1,0)^n \oplus (0,1)^n .
+\]
+This is a convention choice, not a theorem.
+
+We use throughout:
+\begin{itemize}
+  \item[(K1)] Albert classification: $D$ is a totally definite quaternion division algebra over a totally real field $F$, with $[D:\mathbb{Q}] = 4[F:\mathbb{Q}]$; the Rosati involution is canonical quaternion conjugation and is positive definite at every real place of $F$.
+  \item[(K2)] Dimension formula: for $A$ simple with $\mathrm{End}^0(A) = D$,
+  \[
+  2 \dim A = [D:\mathbb{Q}]^{1/2} \cdot \dim_D H^1(A,\mathbb{Q}).
+  \]
+  \item[(K4)] $H^1(A,\mathbb{Q})$ is a left $D$-module of rank $n$ carrying a polarizable $\mathbb{Q}$-Hodge structure of weight $1$, and $G_{\mathrm{MT}} \subseteq \mathrm{Sp}_{2n,D}$, a form of $\mathrm{Sp}_{4n[F:\mathbb{Q}]}$.
+  \item[(K5)] Weil classes in $H^{12}(A,\mathbb{Q})$ are Hodge classes of type $(6,6)$.
+  \item[(K6)] Existence of such $A$ for fixed $F$ is a PEL moduli problem; non-emptiness is governed by Kottwitz's determinant condition together with local-global conditions.
+  \item[(K7)] Tannakian dictionary: algebraic Hodge classes correspond to $G_{\mathrm{MT}}$-invariants.
+\end{itemize}
+
+\subsection*{Unconditional vacuity of the literal $[F:\mathbb{Q}]=6$ formulation}
+\label{sec:vacuity}
+
+By (K1), $[D:\mathbb{Q}]^{1/2} = 2\sqrt{[F:\mathbb{Q}]}$. By (K2),
+\[
+\dim A = \sqrt{[F:\mathbb{Q}]} \cdot n, \qquad n = \dim_D H^1(A,\mathbb{Q}) \in \mathbb{Z}_{>0}.
+\]
+For $\dim A = 6$ we require $\sqrt{[F:\mathbb{Q}]}\cdot n = 6$. Since $n$ is a positive integer, $\sqrt{[F:\mathbb{Q}]}$ must be rational, hence $[F:\mathbb{Q}]$ must be a perfect square. The perfect squares dividing $36$ are
+\[
+[F:\mathbb{Q}] \in \{1,\,4,\,9,\,36\},
+\]
+with corresponding
+\[
+n = \frac{6}{\sqrt{[F:\mathbb{Q}]}} \in \{6,\,3,\,2,\,1\}.
+\]
+In particular $[F:\mathbb{Q}] = 6$ is impossible, since $\sqrt{6}$ is irrational. This kills the literal $[F:\mathbb{Q}]=6$ formulation of Type III(1) in dimension $6$. This step is unconditional.
+
+\subsection*{Conjectural structure of the Mumford--Tate group and the Weil class}
+
+The following are \emph{expected} and are not proved here.
+
+\begin{itemize}
+  \item[(C1)] \emph{Generic Mumford--Tate group.} In the rank-$1$ case $([F:\mathbb{Q}]=36,\ n=1)$, the uniform signature condition is expected to force
+  \[
+  G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2,
+  \]
+  equivalently the $D$-linear symplectic group reduced to trace-zero. In the higher-rank cases $([F:\mathbb{Q}] \in \{9,4,1\},\ n \in \{2,3,6\})$, the uniform signature condition is expected to force $G_{\mathrm{MT}}$ to be a product of $\mathrm{SL}_2$'s indexed by the real places of $F$ (or a form thereof), a proper subgroup of $\mathrm{Sp}_{2n,D}$.
+  \item[(C2)] \emph{Weil class algebraicity.} In the rank-$1$ case, if $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2$, the space of Hodge classes $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ is expected to be $1$-dimensional, spanned by the Weil class $\omega$. If $\omega$ were algebraic, the Hodge group would be smaller than $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2$, forcing $A$ to have CM, which contradicts $F$ being totally real; hence $\omega$ is expected to be non-algebraic. In the higher-rank cases, $H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}$ may be larger than $1$-dimensional, and whether $\omega$ is algebraic for generic $A$ is open.
+  \item[(C3)] \emph{Existence.} Not every admissible $F$ admits such $A$; Kottwitz's determinant condition is necessary, but sufficiency and the relevant local-global analysis are incomplete.
+  \item[(C4)] \emph{Mumford--Tate conjecture.} Used implicitly in (C1); not proved here.
+\end{itemize}
+
+\subsection*{Gap}
+
+The argument is conditional on the Mumford--Tate conjecture (C4) and on the conjectural identification of the generic Mumford--Tate group (C1). No unconditional proof is given that $G_{\mathrm{MT}}$ equals $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SL}_2$ in the rank-$1$ case, or a product of $\mathrm{SL}_2$'s in the higher-rank cases. The non-algebraicity of the Weil class in the rank-$1$ case relies on a CM-contradiction argument that is not made rigorous here. The algebraicity of the Weil class in the higher-rank cases is left open. Existence for a given totally real field $F$ is not established; only necessary conditions from Kottwitz's determinant condition are invoked. The interpretation of Type III(1) as the uniform Hodge-signature condition is a convention choice, not a theorem. The vacuity of $[F:\mathbb{Q}]=6$ is the only unconditional output.
+
+\section{S8: Type IV(1,1)}
+% TODO: awaiting an approved proof.
+
+\section{S9: Type IV(2,1)}
+% TODO: awaiting an approved proof.
+
+\section{S10: Type IV(3,1)}
+% TODO: awaiting an approved proof.
+
+\section{S11: Type IV(6,1)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and its 'proof' is a conditional argument. The key mathematical steps are either standard (Albert classification, Type IV dimension formula dim A = e·n, Shimura–Taniyama for CM abelian varieties) or explicitly flagged as conjectural/open (Mumford–Tate description, existence via Kottwitz). No serious logical error or unsupported step is presented as proved. The only substantive issue is that the Shimura–Taniyama implication is stated somewhat broadly, but for a CM abelian variety with [E:Q] = 2 dim A it is the expected Hodge-class algebraicity statement, and the candidate does not rely on it unconditionally. The ambiguity of Type IV(6,1) is acknowledged and resolved by convention. Overall, the submission is honest about its conditional status and does not overclaim a proof.
+\section*{S11: Type IV \((6,1)\)}
+
+\paragraph{Status.}
+The following is a \emph{conjecture}. No complete proof is produced; the argument below is conditional.
+
+\medskip
+\noindent\textbf{Conjecture.}
+Let \(A\) be a \(6\)-dimensional simple abelian variety of Albert Type IV with
+\(\operatorname{End}^0(A) = E\) a CM field, maximal totally real subfield \(E_0\), and
+\[
+(e,n) \;=\; \bigl([E_0:\mathbb{Q}],\ \tfrac12 \dim_E H^1(A,\mathbb{Q})\bigr) \;=\; (6,1).
+\]
+Then \(\dim A = e\cdot n = 6\) and \([E:\mathbb{Q}] = 2e = 12 = 2\dim A\), so \(A\) is CM in the strict sense. Consequently, by the Shimura--Taniyama theorem, every Hodge class on \(A\) is algebraic; in particular the Weil class
+\(\omega \in H^{12}(A,\mathbb{Q})\) is algebraic. The generic Mumford--Tate group is expected to be
+\(G_{\mathrm{MT}} = \operatorname{Res}_{E_0/\mathbb{Q}} U(1,1)\) (or \(SU(1,1)\) modulo scalars), and
+\(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) is expected to be \(1\)-dimensional, spanned by \(\omega\). Existence of such an \(A\) for a given CM field \(E\) with \([E_0:\mathbb{Q}] = 6\) is governed by Kottwitz's determinant condition and is not automatic. If instead Type IV\((6,1)\) is read as a local signature condition, the case is vacuous because it would force \(2n = 7\), impossible.
+
+\medskip
+\noindent\textbf{Conditional argument (not a proof).}
+
+\begin{enumerate}
+\item By the Albert classification (K1), \(D = \operatorname{End}^0(A)\) is a CM field \(E\), with maximal totally real subfield \(E_0\) and \([E:\mathbb{Q}] = 2e\), where \(e = [E_0:\mathbb{Q}]\). The Rosati involution is complex conjugation \(\iota\) on \(E\).
+
+\item The Type IV dimension formula (K2) gives \(\dim A = e\cdot n\), where
+\(n = \tfrac12 \dim_E H^1(A,\mathbb{Q}) \in \mathbb{Z}_{>0}\). Equivalently, \(H^1(A,\mathbb{Q})\) is a free \(E\)-module of rank \(2n\), and \(\dim A = e\cdot n\). This is linear in \(e\), not \(\sqrt{e}\); the \(\sqrt{e}\) formula used in S8 was a misnormalization for Type IV.
+
+\item The notation Type IV\((6,1)\) is ambiguous. Under the global CM-type reading, \((e,n) = (6,1)\). Then \(\dim A = e\cdot n = 6\cdot 1 = 6\), so the case is not vacuous. Under the local-signature reading, Type IV\((6,1)\) would mean a local signature \((6,1)\) at a real place of \(E_0\), forcing \(2n = 6+1 = 7\), impossible; that reading is vacuous.
+
+\item Adopt the global CM-type reading. Then \([E:\mathbb{Q}] = 2e = 12 = 2\dim A\), so \(A\) is CM in the strict sense (maximal CM rank). By the Shimura--Taniyama theorem (K3), every Hodge class on \(A\) is algebraic. In particular, the Weil class \(\omega \in H^{12}(A,\mathbb{Q})\) is a Hodge class, hence algebraic.
+
+\item The generic Mumford--Tate group is expected to be
+\(G_{\mathrm{MT}} = \operatorname{Res}_{E_0/\mathbb{Q}} U(1,1)\) (or \(SU(1,1)\) modulo scalars). This is a conjectural expectation (C1), not proved here. If it holds, then \(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) is expected to be \(1\)-dimensional, spanned by \(\omega\) (C2).
+
+\item Existence of such an \(A\) for a given CM field \(E\) with \([E_0:\mathbb{Q}] = 6\) is governed by Kottwitz's determinant condition (K5) and is not automatic (C3). The argument does not establish existence; it only shows that if such an \(A\) exists, then the stated algebraicity conclusion follows from K3.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+\item[(K1)] Albert classification for Type IV: \(\operatorname{End}^0(A) = E\) is a CM field, Rosati involution is complex conjugation.
+\item[(K2)] Type IV dimension formula \(\dim A = e\cdot n\) with \(e = [E_0:\mathbb{Q}]\) and \(n = \tfrac12 \dim_E H^1(A,\mathbb{Q}) \in \mathbb{Z}_{>0}\).
+\item[(K3)] Shimura--Taniyama: if \([E:\mathbb{Q}] = 2\dim A\), then every Hodge class on \(A\) is algebraic.
+\item[(K4)] The \(E\)-linear Weil class \(\omega\) lies in \(H^{2\dim A}(A,\mathbb{Q}) = H^{12}(A,\mathbb{Q})\) and is fixed by the generic Mumford--Tate group.
+\item[(K5)] Kottwitz determinant condition governs existence of a PEL datum with the required signature; not automatic.
+\item[Convention] Type IV\((6,1)\) is read as \((e,n) = (6,1)\) (global CM-type/rank reading). The local-signature reading is vacuous and discarded.
+\item[(C1)] \emph{(conjectural)} The generic Mumford--Tate group is \(G_{\mathrm{MT}} = \operatorname{Res}_{E_0/\mathbb{Q}} U(1,1)\) (or \(SU(1,1)\) modulo scalars).
+\item[(C2)] \emph{(conjectural)} \(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) is \(1\)-dimensional, spanned by \(\omega\).
+\item[(C3)] \emph{(open)} Existence of \(A\) for a given CM field \(E\) with \([E_0:\mathbb{Q}] = 6\) satisfying Kottwitz's determinant condition.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Gap.}
+The argument is conditional. The central algebraicity conclusion for the Weil class \(\omega\) depends on the existence of an actual abelian variety \(A\) of Type IV with \((e,n) = (6,1)\). Existence is not established; it is governed by Kottwitz's determinant condition (K5) and is open (C3). The Shimura--Taniyama step (K3) is invoked only conditionally on such an \(A\) existing. The Mumford--Tate description \(G_{\mathrm{MT}} = \operatorname{Res}_{E_0/\mathbb{Q}} U(1,1)\) and the identification \(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}} = \langle \omega \rangle\) are conjectural (C1)--(C2), not proved. Therefore the claim is not proved; it remains a conjecture contingent on existence and the Mumford--Tate computation.
+
+\section{N1: 5+1}
+% TODO: awaiting an approved proof.
+
+\section{N2: 4+2}
+% TODO: awaiting an approved proof.
+
+\section{N3: 4+1+1}
+% TODO: awaiting an approved proof.
+
+\section{N4: 3+3}
+% TODO: awaiting an approved proof.
+
+\section{N5: 3+2+1}
+% TODO: awaiting an approved proof.
+
+\section{N6: 3+1+1+1}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and does not claim a complete proof. Steps 1–7 are conditional bookkeeping under reading R2 and contain no serious logical error: the dimension formula dim A = e·n, the CM-type partition 3+1+1+1 giving 2e = 6, e = 3, n = 2, and the rejection of R1/R3 are internally consistent. The key mathematical content (Mumford–Tate group, 1-dimensionality of H⁴ invariant, existence and non-algebraicity of the Weil class, and existence via Kottwitz) is openly flagged as conjectural/open, so there is no unsupported step presented as proved. No serious logical error or unsupported key step is asserted as established.
+\section*{N6: The \(3+1+1+1\) Reading for Type IV Abelian Sixfolds}
+
+\medskip
+\noindent\textbf{Status.} Conjecture (conditional). No complete proof is claimed.
+
+\medskip
+\noindent\textbf{Setting.} Let \(A\) be a simple six-dimensional abelian variety of Albert Type~IV, with
+\[
+D \;=\; \End^{0}(A) \;=\; E,
+\]
+where \(E\) is a CM field with maximal totally real subfield \(E_{0}\), and \([E:\mathbb{Q}] = 2e\), \(e = [E_{0}:\mathbb{Q}]\). By the Albert classification (K1), the Rosati involution acts on \(E\) as complex conjugation. By the Type~IV dimension formula (K2),
+\[
+H^{1}(A,\mathbb{Q}) \text{ is a free } E\text{-module of rank } 2n,\qquad \dim A = e\cdot n,
+\]
+with \(n\in\mathbb{Z}_{>0}\); the \(\sqrt{e}\)-normalization is discarded as a misnormalization.
+
+\medskip
+\noindent\textbf{Reading R2.} We interpret ``\(3+1+1+1\)'' as a \emph{global CM-type decomposition} of \(E\): a partition of the \(2e\) embeddings \(E\hookrightarrow\mathbb{C}\) into conjugate pairs, with block sizes \(3,1,1,1\). Thus
+\[
+2e \;=\; 3+1+1+1 \;=\; 6,\qquad e = 3,\qquad [E:\mathbb{Q}] = 6.
+\]
+Combined with \(\dim A = e\cdot n = 6\), this forces
+\[
+n = 2.
+\]
+Since \([E:\mathbb{Q}] = 6 < 12 = 2\dim A\), the variety \(A\) is \emph{not} CM-strict; by K4/K5 the Shimura--Taniyama theorem does not apply.
+
+\medskip
+\noindent\textbf{Rejected readings.}
+\begin{itemize}
+\item \emph{R1 (local Hodge signature \((3,1,1,1)\) at a single real place).} Rejected: conjugate symmetry (K3) forces the conjugate place \(\bar v\) to carry the conjugate partition \((1,1,1,3)\), so a single real place cannot host an asymmetric \(4\)-tuple.
+\item \emph{R3 (\(E_{0}\otimes\mathbb{R}\)-isotypic rank decomposition \(3+1+1+1\)).} Blocked: \(3+1+1+1 = 2n = 6\) gives \(n = 3\), and then \(\dim A = e\cdot n = 6\) forces \(e = 2\). Hence \(E_{0}\otimes\mathbb{R}\) has only two real places and at most two isotypic blocks, not four; R3 would require \([E_{0}:\mathbb{Q}]\ge 4\), contradicting \(e\cdot n = 6\) with \(n = 3\).
+\end{itemize}
+
+\medskip
+\noindent\textbf{Conjectural content.} Conditional on standard Type~IV Mumford--Tate theory (C1), the generic Mumford--Tate group is expected to be
+\[
+G_{\mathrm{MT}} \;=\; \Res_{E_{0}/\mathbb{Q}}\, U(2,2)
+\]
+(or \(SU(2,2)\) modulo scalars). Conditional on C2, the invariant space
+\[
+H^{4}(A,\mathbb{Q})^{G_{\mathrm{MT}}}
+\]
+is expected to be \(1\)-dimensional over \(E\), spanned by an \(E\)-linear Weil class \(\omega_{E}\). Conditional on C3, \(\omega_{E}\) is expected \emph{not} to be algebraic for generic \(A\); this non-algebraicity is the conjectural core of N6. Conditional on C4, existence of such an \(A\) with CM-type decomposition \(3+1+1+1\) is governed by Kottwitz's determinant condition (K7) and is not automatic.
+
+\medskip
+\noindent\textbf{Proof status.} Steps~1--7 of the candidate argument (Albert classification, dimension formula, the derivation \(2e=6\), \(e=3\), \(n=2\), the CM-strictness threshold, and the rejection of R1 and R3) are rigorous bookkeeping under reading R2. The Mumford--Tate computation (C1), the \(1\)-dimensionality of \(H^{4}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) (C2), the existence of the \(E\)-linear Weil class \(\omega_{E}\) (C2), its non-algebraicity (C3), and the existence of \(A\) with the prescribed CM-type decomposition (C4) are asserted only as expectations or conjectures. In particular, the non-algebraicity of \(\omega_{E}\) is the open core and depends on the Mumford--Tate conjecture in the relevant setting. No unconditional theorem is produced; the statement must be read strictly as conditional/conjectural.
+
+\section{N7: 2+2+2}
+% TODO: awaiting an approved proof.
+
+\section{N8: 2+2+1+1}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the arithmetic core under R1 (n=3, e=2, [E:Q]=4, conjugate pairing) follows correctly from the stated Type IV dimension formula and local-signature interpretation. The key open steps—Mumford–Tate group identification, 1-dimensionality of the invariant Weil class, its non-algebraicity, and Kottwitz existence—are clearly flagged as conjectural rather than presented as proved. No serious logical error or unsupported step is disguised as a proof. Minor issues (e.g., the R3 inconsistency argument and the CM-strictness discussion) are appropriately noted as gaps or convention-dependent, not as established results.
+\section*{N8: The Signature \(2+2+1+1\) for Type IV Abelian Varieties}
+
+\paragraph{Status.}
+The following is a \textbf{conjecture}, not a theorem. The arithmetic core under reading R1 is conditional on the stated assumptions; the Mumford--Tate identification, the existence and non-algebraicity of the Weil class, and the Kottwitz existence statement are open.
+
+\paragraph{Setup.}
+Let \(A\) be a simple six-dimensional abelian variety of Albert Type IV, with
+\[
+D \;=\; \End^{0}(A) \;=\; E
+\]
+a CM field, and let \(E_{0}\subset E\) be its maximal totally real subfield. Write
+\[
+[E:\mathbb{Q}] = 2e, \qquad e = [E_{0}:\mathbb{Q}],
+\]
+so that the Rosati involution acts on \(E\) as complex conjugation. By the Type IV dimension formula, \(H^{1}(A,\mathbb{Q})\) is a free \(E\)-module of rank \(2n\) with \(n\in\mathbb{Z}_{>0}\), and
+\[
+\dim A \;=\; e\cdot n .
+\]
+
+\paragraph{Reading R1.}
+Read \(2+2+1+1\) as the local Hodge signature \((2,2,1,1)\) at a real place \(v\) of \(E_{0}\). Then the \(E_{0}\otimes\mathbb{R}\)-isotypic component at \(v\) has rank \(2n=6\), hence
+\[
+n = 3 .
+\]
+Combining with \(\dim A = e\cdot n = 6\) gives
+\[
+e = 2, \qquad [E_{0}:\mathbb{Q}] = 2, \qquad [E:\mathbb{Q}] = 2e = 4 .
+\]
+
+\paragraph{Conjugate symmetry.}
+The partition \((2,2,1,1)\) is not palindromic; its conjugate is \((1,1,2,2)\). By conjugate symmetry of local Hodge signatures, a single real place cannot host \((2,2,1,1)\) in isolation: it must be paired with its conjugate place \(\bar v\) carrying \((1,1,2,2)\). Since \(e=2\), there are exactly two real places, so this pairing is arithmetically consistent.
+
+\paragraph{CM-strictness.}
+Since \([E:\mathbb{Q}] = 4 < 12 = 2\dim A\), the variety \(A\) is not CM-strict in the sense of the criterion \([E:\mathbb{Q}] = 2\dim A\). Consequently the Shimura--Taniyama theorem does not apply in its standard form. This is a definitional consequence of the stated criterion; it does not by itself establish that no CM structure exists.
+
+\paragraph{Conjectural Mumford--Tate and Weil class.}
+The generic Mumford--Tate group is expected to be
+\[
+G_{\mathrm{MT}} \;=\; \mathrm{Res}_{E_{0}/\mathbb{Q}}\, U(3,3)
+\]
+(or \(SU(3,3)\) modulo scalars). Accordingly, \(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) is expected to be \(1\)-dimensional, spanned by an \(E\)-linear Weil class \(\omega_{E}\). The algebraicity of \(\omega_{E}\) in \(H^{12}(A,\mathbb{Q})\) is open and is expected to fail for generic \(A\); this non-algebraicity is the conjectural core of N8.
+
+\paragraph{Existence.}
+Existence of such an \(A\) with signature \((2,2,1,1)\) at \(v\) and \((1,1,2,2)\) at \(\bar v\) is governed by Kottwitz's determinant condition and is not automatic.
+
+\paragraph{Alternative readings.}
+\begin{itemize}
+\item \emph{Reading R2} (global CM-type decomposition \(2+2+1+1\)): gives \([E:\mathbb{Q}]=6\), \(e=3\), \(n=2\), again not CM-strict, with \(G_{\mathrm{MT}}\) expected to be \(\mathrm{Res}_{E_{0}/\mathbb{Q}}\,U(2,2)\). This reading requires a convention fix, since \(e=3\) blocks cannot host a \(4\)-part partition without splitting.
+\item \emph{Reading R3} (\(E_{0}\otimes\mathbb{R}\)-isotypic rank decomposition \(2+2+1+1\)): internally inconsistent. Indeed \(2+2+1+1=6=2n\) forces \(n=3\), and \(\dim A = e\cdot n = 6\) gives \(e=2\); but \(e=2\) means \(E_{0}\otimes\mathbb{R}\) has only two isotypic blocks, not four.
+\end{itemize}
+
+\paragraph{Proof status.}
+No complete proof is produced. Under R1, the arithmetic core
+\[
+n=3,\quad e=2,\quad [E:\mathbb{Q}]=4,
+\]
+together with the conjugate pairing of \((2,2,1,1)\) with \((1,1,2,2)\), is rigorous given the Type IV dimension formula and the local-signature interpretation. The following steps are asserted rather than proved:
+\begin{enumerate}
+\item identification of the generic Mumford--Tate group as \(\mathrm{Res}_{E_{0}/\mathbb{Q}}\,U(3,3)\) (or \(SU(3,3)\) modulo scalars);
+\item \(1\)-dimensionality of \(H^{12}(A,\mathbb{Q})^{G_{\mathrm{MT}}}\) and existence of the \(E\)-linear Weil class \(\omega_{E}\);
+\item non-algebraicity of \(\omega_{E}\) for generic \(A\);
+\item existence of \(A\) with the prescribed signature via Kottwitz's determinant condition.
+\end{enumerate}
+The CM-strictness statement is a definitional consequence of the stated criterion and does not by itself rule out a CM structure. Reading R2 requires an unsupplied convention fix. The R3 inconsistency argument is plausible but not rigorously established as written. The correct status is \textbf{CONJECTURE} under R1, with the non-algebraicity of the Weil class as the open core.
+
+\section{N9: 2+1+1+1+1}
+% TODO: awaiting an approved proof.
+
+\section{N10: 1+1+1+1+1+1}
+% TODO: awaiting an approved proof.
+\end{document}

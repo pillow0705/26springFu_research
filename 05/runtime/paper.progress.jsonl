@@ -1,0 +1,13 @@
+{"time": 1789304956.7317219, "event": "AGENT_START", "agent": "A1"}
+{"time": 1789304956.731732, "event": "AGENT_START", "agent": "A2"}
+{"time": 1789304956.731806, "event": "AGENT_START", "agent": "A3"}
+{"time": 1789304976.73684, "event": "MEETING_START"}
+{"time": 1789304976.9335291, "event": "SUBMIT", "task": "S1", "agent": "A3", "attempt": 1}
+{"time": 1789304978.211613, "event": "REVIEW", "task": "S1", "agent": "A3", "decision": "BLOCKED"}
+{"time": 1789304978.417472, "event": "SUBMIT", "task": "S1", "agent": "A1", "attempt": 1}
+{"time": 1789304979.7124648, "event": "REVIEW", "task": "S1", "agent": "A1", "decision": "BLOCKED"}
+{"time": 1789304987.233137, "event": "SUBMIT", "task": "S1", "agent": "A2", "attempt": 1}
+{"time": 1789304989.0082939, "event": "REVIEW", "task": "S1", "agent": "A2", "decision": "BLOCKED"}
+{"time": 1789305004.4127092, "event": "MEETING_END"}
+{"time": 1789305019.031423, "event": "SUBMIT", "task": "S2", "agent": "A1", "attempt": 1}
+{"time": 1789305020.155264, "event": "REVIEW", "task": "S2", "agent": "A1", "decision": "BLOCKED"}

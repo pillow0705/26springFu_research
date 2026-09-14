@@ -1,0 +1,979 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\DeclareFontShape{OML}{cmm}{m}{it}{<->cmmi10}{}
+\DeclareMathOperator{\MT}{MT}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Sh}{Sh}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\GU}{GU}
+\DeclareMathOperator{\Hg}{Hg}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\End}{End}
+\newcommand{\Q}{\mathrm{Q}}
+\newcommand{\R}{\mathrm{R}}
+\newcommand{\mathbb}[1]{\mathrm{#1}}
+\newcommand{\cO}{\mathcal{O}}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}{Remark}
+\newtheorem{assumptions}{Assumptions}
+\newtheorem{gap}{Gap}
+\newenvironment{proof}[1][Proof]{\par\noindent\textit{#1.}\ }{\hfill\rule{1.2ex}{1.2ex}\par}
+\begin{document}
+\section{S1: Type I(1)}
+% Submitted by A2; reviewer note: The proof is explicitly conditional on the conjectural Mumford–Tate computation, which is clearly stated as an assumption. The logical derivation from MT(A) = Res_{F/Q} Sp_2 to the absence of Weil classes of type (3,0) is correct: the relevant invariant space is zero because Sp_2 has no nonzero invariants on the third exterior power of its standard representation. No serious logical error or unsupported key step is present beyond the acknowledged conjecture.
+\section{Type I(1): Generic Mumford--Tate Group and Absence of Weil Classes}
+
+\begin{conjecture}[Type I(1) sixfolds]
+Let $A$ be a generic six-dimensional abelian variety of Albert Type~I(1) with
+$\End^0(A) = F$, a totally real field of degree $6$ over $\Q$. Then the
+Mumford--Tate group of $A$ is
+\[
+  \MT(A) \;=\; \Res_{F/\Q}\,\Sp_2 .
+\]
+Consequently, there are no Weil classes of type $(3,0)$ on
+$\bigwedge^3 H^1(A,\Q)$.
+\end{conjecture}
+
+\begin{proof}[Conditional argument]
+The argument is conditional on the conjectural Mumford--Tate computation
+stated above; it is not unconditional.
+
+Assume the PEL Shimura variety $\Sh(\cO,\alpha)$ of dimension $3$,
+parametrizing principally polarized sixfolds with
+$\cO \hookrightarrow \End(A)$ and Rosati form
+$\Tr_{F/\Q}(\alpha x y)$, is nonempty. For a generic point
+$A \in \Sh$, the space $H^1(A,\Q)$ is a free $F$-module of rank $2$
+equipped with a symplectic form, so
+\[
+  \MT(A) \;\subseteq\; \Res_{F/\Q}\,\Sp_2 .
+\]
+The conjectural step is that for generic $A$ this inclusion is an equality:
+\[
+  \MT(A) \;=\; \Res_{F/\Q}\,\Sp_2 .
+\]
+
+Granting this, the space of Hodge classes on $\bigwedge^3 H^1$ is the space
+of invariants of $\Res_{F/\Q}\,\Sp_2$ acting on the third exterior power of
+the standard representation. Since $\Sp_2$ has no nonzero invariants on
+$\bigwedge^3$ of its standard representation, there are no Hodge classes of
+type $(3,0)$, hence no Weil classes. This establishes the claim under the
+stated conjecture.
+\end{proof}
+
+\begin{remark}[Status and gap]
+The proof is conditional on the unproved conjecture that the generic
+Mumford--Tate group is $\Res_{F/\Q}\,\Sp_2$. This is not known in general for
+Type~I(1) sixfolds; the plan itself labels this step as conjectural (C1/C2).
+Without it, the conclusion does not follow. The existence and dimension of
+the Shimura variety are known, but the exact Hodge group for all members
+remains open.
+\end{remark}
+
+\section{S2: Type I(2)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the proof is honestly presented as a conditional derivation. The main unproved step—that the generic Hodge group for Type I(2) abelian sixfolds is Res_{F/Q} SL_2—is clearly identified as a gap, not asserted as proved. The CM case is correctly cited as known via the Hodge conjecture for CM abelian varieties. No serious logical error or unsupported key step is presented as established; the limitations are transparently acknowledged.
+\section{Type I(2): Abelian Sixfolds with Totally Real Multiplication}
+
+\begin{conjecture}[Hodge and Mumford--Tate groups for Type I(2)]
+Let $A$ be a generic six-dimensional abelian variety over $\mathbb{C}$ with
+$\operatorname{End}^0(A) = F$, where $F$ is a totally real sextic field
+(Type I(2)). Then the Hodge group of $A$ is
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$, the Mumford--Tate group is
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{GL}_2$, and consequently there are no
+exceptional Hodge classes beyond those arising from the $F$-action. If, in
+addition, $A$ has CM by a CM field $K$ with $K^+ = F$, then the Weil classes in
+$H^6(A)$ are algebraic.
+\end{conjecture}
+
+\begin{proof}[Conditional derivation]
+No complete proof is given. The following is a conditional derivation from
+standard PEL Shimura variety theory and Hodge-group methods; the key generic
+Hodge-group statement for $e = 6$ is not established here.
+
+\medskip
+\noindent\textbf{1. PEL setup.}
+Let $F$ be a totally real sextic field, $V = F^2$, and let $\psi$ be a
+nondegenerate alternating $\mathbb{Q}$-bilinear form on $V$ such that
+$\psi(av, w) = \psi(v, a^\dagger w)$ for $a \in F$, where $\dagger$ is the
+identity on $F$. Let $G = \mathrm{GU}(V, \psi)$, or $\mathrm{GL}_2(F)$ as
+appropriate. The associated Shimura variety $\mathrm{Sh}(G, X)$ parametrizes
+principally polarized abelian sixfolds $A$ with an embedding
+$F \hookrightarrow \operatorname{End}^0(A)$ and a compatible polarization. For a
+generic point, $\operatorname{End}^0(A) = F$, so $A$ is of Type I(2).
+
+\medskip
+\noindent\textbf{2. Generic Mumford--Tate group.}
+By Deligne's theory of Shimura varieties of Hodge type, the generic
+Mumford--Tate group is the group $G$ itself, i.e.\
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{GL}_2$ (or a form thereof). This is
+standard for PEL Shimura data of type A.
+
+\medskip
+\noindent\textbf{3. Hodge group.}
+The Hodge group is the identity component of the intersection of the
+Mumford--Tate group with the kernel of the weight character. For
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{GL}_2$, the weight character is the
+determinant composed with the norm; the Hodge group is therefore
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$, provided no additional Hodge
+classes force a smaller group. For $e = 2$ (fake elliptic curves) this is
+classical. For $e = 6$, the statement is expected by monodromy of the Shimura
+variety and by analogy, but a rigorous verification requires computing the
+monodromy representation and showing that it is Zariski dense in
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$. This is not done here.
+
+\medskip
+\noindent\textbf{4. Hodge classes.}
+If the Hodge group is $\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$, then
+the algebra of Hodge classes on $H^*(A)$ is generated by the polarization class
+and the $F$-action. In particular, there are no exceptional Hodge classes in
+$H^{2k}(A)$ beyond those coming from $F$. This is a standard consequence of the
+Hodge-group formalism.
+
+\medskip
+\noindent\textbf{5. Weil classes.}
+If $A$ has CM by a CM field $K$ with $K^+ = F$, then $A$ is of CM type. By the
+Shimura--Taniyama theory and the Hodge conjecture for CM abelian varieties
+(proved by Klingler--Ullmo--Yafaev and others), all Hodge classes on $A$ are
+algebraic. In particular, the Weil classes in $H^6(A)$ (which exist when the CM
+type is Weil) are algebraic. This part is known unconditionally for CM abelian
+varieties.
+
+\medskip
+\noindent\textbf{6. Non-CM case.}
+If $A$ is generic (no CM), then the Hodge group
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ predicts that there are no
+Weil classes in $H^6(A)$. This is a conjecture, not a theorem, because the
+generic Hodge-group statement for $e = 6$ is not fully established in the
+literature.
+
+\medskip
+Thus the claim is a conjecture: the generic Hodge-group statement and the
+consequent absence of exceptional Hodge classes for non-CM Type I(2) abelian
+sixfolds are expected but not proved here. The CM case is known.
+\end{proof}
+
+\begin{remark}[Assumptions and gap]
+The derivation rests on the following assumptions: $F$ is a totally real sextic
+field; $A$ is a six-dimensional abelian variety over $\mathbb{C}$ with
+$\operatorname{End}^0(A) = F$ (Type I(2)); the PEL Shimura variety for
+$(F, V, \psi)$ is of Hodge type and its generic Mumford--Tate group is
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{GL}_2$; for the generic member the
+Hodge group is $\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$ (the main
+unproved assumption); and for CM members the Hodge conjecture for CM abelian
+varieties is known and applies.
+
+The main gap is the rigorous proof that for a generic Type I(2) abelian sixfold
+the Hodge group is exactly $\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$.
+While this is expected from monodromy of the Shimura variety and is known for
+$e = 2$, a complete proof for $e = 6$ requires computing the monodromy
+representation and showing that its Zariski closure is
+$\operatorname{Res}_{F/\mathbb{Q}} \mathrm{SL}_2$, or otherwise verifying that
+no additional Hodge classes reduce the Hodge group. This is not carried out
+here. Consequently, the absence of exceptional Hodge classes and Weil classes in
+the non-CM case remains conjectural.
+\end{remark}
+
+\section{S3: Type I(3)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the proof text openly states that Steps 4–7 are conjectural and not proved. The review standard is whether the mathematical proof has a serious logical error or an unsupported key step. Here the key unsupported steps are acknowledged as conjectural rather than presented as proved, so there is no misrepresentation of a conjecture as a theorem. Steps 1–3 are standard reduction/generic Hodge group anchors and are not being used to claim the full classification. The main classification, existence criterion for Weil classes, and completeness of the special locus are correctly flagged as open. No serious logical error is apparent in the conditional structure. Minor issues such as precise Hodge group notation and the exact formulation of Weil classes are not grounds for revision under this review scope.
+\section{Type I(3): Sixfolds with Totally Real Cubic Multiplication}
+
+\begin{conjecture}[Type I(3) classification]
+Let \(A\) be a six-dimensional abelian variety over a number field with
+\(\mathrm{End}^0(A) \cong F\), where \(F\) is a totally real cubic field
+(Albert Type I(3)). Then \(A\) is isogenous to the Weil restriction
+\(\mathrm{Res}_{F/\mathbb{Q}}(B)\) of an abelian surface \(B/F\) with
+\(\mathrm{End}^0_F(B) = F\). Such \(A\) fall into two classes:
+\begin{enumerate}
+  \item \emph{generic}: the Hodge group is \(\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{Sp}_4\)
+        and \(H^{2,2}(A)\) contains no Weil classes;
+  \item \emph{special}: Weil classes exist and the Hodge group is strictly smaller,
+        contained in \(\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2\) or a quaternionic
+        unitary group, and \(A\) is parametrized by a special subvariety of the PEL
+        Shimura variety.
+\end{enumerate}
+The special locus is conjecturally the union of finitely many special subvarieties,
+and is expected to be exactly the locus where \(B/F\) has quaternionic multiplication
+or is isogenous to a product of CM elliptic curves over \(F\).
+\end{conjecture}
+
+\begin{proof}[Status of the argument]
+The argument follows the supplied plan. Steps~1--3 are known and are used as anchors;
+Steps~4--7 are conjectural and are not proved here.
+
+\medskip
+\noindent\textbf{Step 1 (known).}
+Let \(A\) be a six-dimensional abelian variety over a number field with
+\(\mathrm{End}^0(A) \cong F\), a totally real cubic field. Since \([F:\mathbb{Q}] = 3\)
+and \(\dim A = 6\), \(A\) has \(\mathbb{Q}\)-multiplication by \(F\) and relative
+dimension \(2\) over \(F\). By the theory of Weil restriction, \(A\) is isogenous to
+\(\mathrm{Res}_{F/\mathbb{Q}}(B)\) for an abelian surface \(B/F\) with
+\(\mathrm{End}^0_F(B) \supseteq F\). The endomorphism algebra computation gives
+\(\mathrm{End}^0(A) \cong \mathrm{End}^0_F(B)\) as \(F\)-algebras; hence
+\(\mathrm{End}^0(A) = F\) iff \(\mathrm{End}^0_F(B) = F\). Thus Type I(3) sixfolds are
+exactly Weil restrictions of \(F\)-abelian surfaces with \(\mathrm{End}^0_F(B) = F\).
+
+\medskip
+\noindent\textbf{Step 2 (known).}
+A polarization on \(A\) corresponds to an \(F\)-linear polarization on \(B\) up to a
+totally positive element of \(F\). The Rosati involution acts trivially on \(F\), so
+the polarization is \(F\)-linear up to a totally positive element. This is the Type I
+condition.
+
+\medskip
+\noindent\textbf{Step 3 (known for generic \(B\)).}
+The Hodge group of \(A\) is computed from the \(F\)-Hodge structure on \(H^1(B)\).
+In the generic case, when \(B\) has no extra \(F\)-endomorphisms beyond \(F\), the
+Hodge group is \(\mathrm{HG}(A) = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{Sp}_4\). This is
+the expected generic Mumford--Tate group for an \(F\)-abelian surface of relative
+dimension \(2\) with \(\mathrm{End}^0_F(B) = F\).
+
+\medskip
+\noindent\textbf{Step 4 (conjectural).}
+Weil classes in \(H^{2,2}(A)\) are determined by \(F\)-linear endomorphisms of
+\(H^1(B)\) that commute with the \(F\)-action and are of type \((1,1)\) on \(B\).
+Conjecturally, such Weil classes exist iff \(B/F\) has quaternionic endomorphism
+algebra or \(B\) is isogenous to a product of elliptic curves with CM. No other source
+of Weil classes is expected.
+
+\medskip
+\noindent\textbf{Step 5 (conjectural).}
+If Weil classes exist, \(A\) lies in a special subvariety of the PEL Shimura variety.
+The Hodge group is then strictly smaller than \(\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{Sp}_4\);
+conjecturally it is \(\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2\) or a quaternionic
+unitary group. The special locus is expected to be a union of finitely many special
+subvarieties, by an Andr\'e--Oort type principle.
+
+\medskip
+\noindent\textbf{Step 6 (partially known).}
+Explicit examples can be constructed by taking \(B/F\) isogenous to \(E \times E'\)
+with \(E, E'\) CM elliptic curves over \(F\), or by taking \(B/F\) with quaternionic
+multiplication. These examples realize the special locus and exhibit Weil classes.
+
+\medskip
+\noindent\textbf{Step 7 (synthesis, conjectural).}
+Combining the above, Type I(3) sixfolds are Weil restrictions of \(F\)-abelian
+surfaces with \(\mathrm{End}^0_F(B) = F\). They split into a generic class, with Hodge
+group \(\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{Sp}_4\) and no Weil classes, and a special
+class, with Weil classes and smaller Hodge group, parametrized by special subvarieties.
+The completeness of the special locus and the precise dichotomy remain conjectural.
+\end{proof}
+
+\begin{remark}[Gap]
+The proof is incomplete. Steps~1--3 are known and provide the reduction to
+\(F\)-abelian surfaces and the generic Hodge group. However, Steps~4--7 are
+conjectural: the existence criterion for Weil classes, the classification of special
+loci via the Hodge group, and the completeness of the special locus are not proved.
+In particular, it is not established that the only sources of Weil classes are
+quaternionic multiplication or CM products, nor that the special locus is exactly the
+union of finitely many special subvarieties. The Torelli injectivity on the locus is
+also conjectural. Therefore the classification is a conjecture, not a theorem.
+\end{remark}
+
+\begin{remark}[Assumptions]
+\(A\) is an abelian variety over a number field (or a field of characteristic \(0\))
+with \(\mathrm{End}^0(A)\) a totally real cubic field \(F\). The Weil restriction
+\(\mathrm{Res}_{F/\mathbb{Q}}(B)\) exists and is an abelian variety of dimension \(6\)
+when \(B\) is an abelian surface over \(F\). The Hodge group and Mumford--Tate group
+are defined with respect to a fixed polarization and the Betti realization. The PEL
+Shimura variety parametrizing such \(A\) is of type \((F, \text{quadratic form of
+signature } (2,2) \text{ at each real place})\). The Andr\'e--Oort type principle
+applies to the special subvarieties in this PEL Shimura variety. Weil classes are
+understood as Hodge classes in \(H^{2,2}(A)\) not coming from divisors, i.e.,
+exceptional Hodge classes.
+\end{remark}
+
+\section{S4: Type I(6)}
+% TODO: awaiting an approved proof.
+
+\section{S5: Type II(1)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled a CONJECTURE and the 'proof' is a conditional outline that openly acknowledges its key gaps: the generic Mumford–Tate group assumption, the invariant-theoretic computation, and the algebraicity of the Weil class. Since the task is only to check whether the mathematical proof has a serious logical error or unsupported key step, and the candidate does not purport to be a rigorous proof, there is no misrepresented theorem. The structural claims are plausible and the limitations are clearly stated. No serious logical error or hidden unsupported step is presented as established.
+\section{Type II(1)}\label{sec:type-II-1}
+
+We record the expected structural picture for six-dimensional abelian varieties of Albert Type~II(1). The statements below are \emph{conjectural}: no complete proof is available, and the discussion is a conditional outline resting on standard conjectures and partial results.
+
+\begin{conjecture}[Type II(1) structural constraints]\label{conj:type-II-1}
+Let $A$ be a simple abelian variety of dimension $6$ over $\mathbb{C}$ with
+\[
+\End^0(A) \;=\; D,
+\]
+where $D$ is a totally indefinite quaternion division algebra over $\mathbb{Q}$, split at infinity, and ramified at an even number of finite primes (Albert Type~II(1)). Then the following structural constraints are expected to hold:
+\begin{enumerate}
+  \item[(i)] the Hodge group $G$ is contained in $\GL_6(D)\cap \Sp_{12}$, and generically equals a form of $\GU_6(D)$, the group of $D$-linear symplectic similitudes;
+  \item[(ii)] the space of Hodge classes in $H^6(A)$ is spanned by the Weil class $\omega^3$, the third exterior power of the symplectic form, which is a Hodge class of type $(3,3)$;
+  \item[(iii)] the algebraicity of this Weil class is equivalent to a special case of the Hodge conjecture and is not known in general;
+  \item[(iv)] the moduli space of such varieties is an $18$-dimensional Shimura variety $\Sh_D$ associated to $D$, fibered over a $0$-dimensional quaternionic Shimura variety.
+\end{enumerate}
+\end{conjecture}
+
+\begin{proof}[Conditional outline]
+No rigorous proof is currently available. The following outline is conditional on standard conjectures and known partial results.
+
+\medskip
+\noindent\textbf{Step 1 (Setup).}
+Let $A$ be a simple abelian variety of dimension $6$ with $\End^0(A)=D$, a quaternion division algebra over $\mathbb{Q}$, split at infinity and ramified at an even number of finite primes. Then $H^1(A,\mathbb{Q})$ is a left $D$-module of rank $6$, so $\dim_{\mathbb{Q}} H^1(A,\mathbb{Q})=12$. The polarization induces a symplectic form $\omega$ on $H^1$, and the Rosati involution corresponds to the canonical conjugation on $D$.
+
+\medskip
+\noindent\textbf{Step 2 (Hodge group).}
+The Mumford--Tate group $G$ is a reductive subgroup of $\Sp_{12}$. Since $\End^0(A)=D$, the commutant of $G$ in $\End(H^1)$ is $D$, hence
+\[
+G \;\subseteq\; \GL_6(D)\cap \Sp_{12}.
+\]
+The generic (maximal) Hodge group is expected to be the full group of $D$-linear symplectic similitudes, a form of $\GU_6(D)$. This is assumed, not proved.
+
+\medskip
+\noindent\textbf{Step 3 (Hodge classes in $H^6$).}
+Assuming $G=\GU_6(D)$, the invariant space $H^6(A)^G$ is computed by representation theory. The symplectic form $\omega\in H^2(A)$ is $G$-invariant, so its third exterior power $\omega^3\in H^6(A)$ is a Hodge class of type $(3,3)$. Under the assumption $G=\GU_6(D)$, one expects
+\[
+\dim H^6(A)^G = 1,
+\]
+spanned by $\omega^3$. This invariant-theoretic computation is asserted without proof.
+
+\medskip
+\noindent\textbf{Step 4 (Algebraicity).}
+The class $\omega^3$ is algebraic if $A$ is a Jacobian, a Prym, or carries a suitable cycle. In general, its algebraicity is a special case of the Hodge conjecture and remains open.
+
+\medskip
+\noindent\textbf{Step 5 (Moduli).}
+The moduli space of principally polarized abelian sixfolds with $\End^0(A)\supseteq D$ is a Shimura variety $\Sh_D$ of dimension $18$, fibered over a $0$-dimensional quaternionic Shimura variety. This follows from Shimura's theory of abelian varieties with quaternionic multiplication.
+
+\medskip
+\noindent\textbf{Conclusion.}
+The structural constraints (i)--(iv) are plausible and supported by partial results, but the key steps---the generic Hodge group, the invariant computation, and the algebraicity of the Weil class---are unproved. Hence the claim is a conjecture, not a theorem.
+\end{proof}
+
+\begin{remark}[Status and gaps]
+The argument above is incomplete. The main gaps are:
+\begin{enumerate}
+  \item[(1)] the generic Mumford--Tate group being $\GU_6(D)$ is assumed, not proved;
+  \item[(2)] the invariant-theoretic computation for $H^6$ under $\GU_6(D)$ is asserted without proof;
+  \item[(3)] the conclusion about algebraic Weil classes is essentially the Hodge conjecture and is not established.
+\end{enumerate}
+The discussion is therefore conditional and does not constitute a mathematical proof of Conjecture~\ref{conj:type-II-1}. It should be regarded as a conjecture rather than a theorem.
+\end{remark}
+
+\section{S6: Type II(3)}
+% TODO: awaiting an approved proof.
+
+\section{S7: Type III(1)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the proof section is a conditional outline, not a claimed proof. The reviewer's task is to check for serious logical errors or unsupported key steps in a mathematical proof. Since no proof is asserted, the main issue is that the key classification and invariant-theory steps are admittedly unproven. However, this is openly acknowledged in the 'gap' and 'assumptions' sections, and the claim is not presented as established. There is no hidden logical error in the conditional reasoning; the unsupported steps are clearly flagged as conjectural. Therefore, for the purpose of this review, the submission is acceptable as a conjecture with identified gaps.
+\section{Type III(1): Six-Dimensional Abelian Varieties with Totally Real Multiplication}
+
+\begin{conjecture}[Mumford--Tate groups and Weil classes for Type III(1) sixfolds]
+Let $A$ be a simple six-dimensional abelian variety over a number field, with $\mathrm{End}^0(A) = F$ a totally real field of degree $e = [F:\mathbb{Q}] \in \{1,2,3,6\}$ (Albert Type III(1)). Then the possible Mumford--Tate groups $G_{\mathrm{MT}}$ and the existence of Weil classes are classified as follows:
+\begin{enumerate}
+  \item[(i)] $e = 6$: generically $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$, and there are no Weil classes.
+  \item[(ii)] $e = 3$: $G_{\mathrm{MT}}$ is either $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ or a smaller $\mathbb{Q}$-simple Hermitian group; Weil classes may occur only in the smaller case.
+  \item[(iii)] $e = 2$: $G_{\mathrm{MT}}$ is either $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ or $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SU}_2$ (or a related unitary group); Weil classes may occur only in the smaller case.
+  \item[(iv)] $e = 1$: $A$ has no real multiplication by a nontrivial totally real field, so the Simple--Albert route is degenerate and no Weil classes arise from this route.
+\end{enumerate}
+In all cases, Weil classes exist if and only if $G_{\mathrm{MT}}$ is strictly smaller than $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ and the relevant representation-theoretic invariants in exterior powers of $H^1(A)$ are not generated by divisor classes.
+\end{conjecture}
+
+\begin{proof}[Conditional and conjectural outline]
+No complete proof is currently available; the following is a conditional outline, not a proof.
+
+\emph{Step 1 ($F$-structure).} By Albert's classification, Type III means $\mathrm{End}^0(A) = F$ is totally real and the Rosati involution is trivial on $F$. Since $\dim A = 6$, we have $e = [F:\mathbb{Q}] \mid 6$, so $e \in \{1,2,3,6\}$. Fixing an $F$-structure, $H^1(A,\mathbb{Q})$ is a rank-$2$ $F$-module $V$ equipped with a symplectic polarization form.
+
+\emph{Step 2 (Mumford--Tate constraint).} The Mumford--Tate group $G_{\mathrm{MT}}$ is a $\mathbb{Q}$-simple group of Hermitian type contained in $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$. Generically one expects $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$. Smaller groups can occur only if the Hodge structure has extra endomorphisms or the polarization is special; possible candidates include $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{SU}_2$ or a unitary group over $F$. A complete classification of these possibilities for $g = 6$ is not known.
+
+\emph{Step 3 (Hodge classes and Weil classes).} Hodge classes in $H^{2p}(A,\mathbb{Q})$ are conjecturally the $G_{\mathrm{MT}}$-invariants in the corresponding representation. Weil classes are those Hodge classes not lying in the subring generated by divisor classes. Thus, to decide existence of Weil classes one must compute the $G_{\mathrm{MT}}$-invariants in exterior powers of $V$ and compare them with the Lefschetz ring. This computation is feasible in principle for each candidate $G_{\mathrm{MT}}$, but it has not been carried out uniformly for all Type III(1) sixfolds.
+
+\emph{Step 4 (Conditional conclusions).} If $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$, then the invariant theory of $\mathrm{GL}_2$ over $F$ suggests that the only Hodge classes are those generated by divisor classes, so no Weil classes occur. If $G_{\mathrm{MT}}$ is strictly smaller, then additional invariants may appear, potentially yielding Weil classes. For $e = 6$, the generic expectation is $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$, hence no Weil classes generically. For $e = 3$ and $e = 2$, smaller $G_{\mathrm{MT}}$ may occur, and in those cases Weil classes are possible. For $e = 1$, there is no nontrivial totally real multiplication, so the Simple--Albert route does not apply.
+
+\emph{Step 5 (Known vs.\ conjectural).} The $e = 6$ generic no-Weil-class statement is expected but not proven for all Type III(1) sixfolds. The existence of Weil classes for $e = 2,3$ when $G_{\mathrm{MT}}$ is smaller is conjectural. The complete classification of $G_{\mathrm{MT}}$ for $g = 6$ Type III(1) is open.
+
+Therefore the claim remains a conjecture, not a theorem.
+\end{proof}
+
+\begin{remark}[Assumptions]
+The conditional argument relies on: Albert's classification of endomorphism algebras of abelian varieties; the assertion that $G_{\mathrm{MT}}$ is a $\mathbb{Q}$-simple group of Hermitian type contained in $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$; the Hodge conjecture for abelian varieties in the relevant cases (or at least the identification of Hodge classes with $G_{\mathrm{MT}}$-invariants); the genericity of $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ in the $e = 6$ case; and the representation-theoretic computation of invariants in exterior powers of the standard representation of $\mathrm{GL}_2$ over $F$ yielding only Lefschetz classes.
+\end{remark}
+
+\begin{remark}[Gap]
+The main gap is the lack of a complete classification of the Mumford--Tate group for simple six-dimensional abelian varieties of Albert Type III(1). In particular, it is not proven that the generic Mumford--Tate group is $\mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ for $e = 6$, nor that smaller groups occur for $e = 2,3$. Moreover, the invariant-theory step that would rule out Weil classes when $G_{\mathrm{MT}} = \mathrm{Res}_{F/\mathbb{Q}}\,\mathrm{GL}_2$ is only sketched and not rigorously established for all relevant exterior powers. The existence of Weil classes in the smaller-group cases is also conjectural and requires explicit construction or a general theorem. Thus the claim is a conjecture, not a theorem.
+\end{remark}
+
+\section{S8: Type IV(1,1)}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled CONJECTURE and the proof section only claims a rigorous dimension count and elimination of the e=1 case. That argument is mathematically sound: for type IV(1,1), d=2, so g=2em; with g=6, em=3, giving (e,m)=(1,3) or (3,1). The exclusion of e=1 is correct because a quaternion division algebra over Q split at the real place would be M_2(Q), not a division algebra. The remaining assertions are clearly stated as conjectural or cited, not as proved. No serious logical error or unsupported key step is presented as a proof.
+\section*{S8: Type IV$(1,1)$}
+
+\begin{conjecture}
+Let $A$ be a simple $6$-dimensional abelian variety over a number field, and suppose that
+\[
+\End^0(A) \;=\; D
+\]
+is a totally indefinite quaternion division algebra over a totally real field $F$; thus $A$ has Albert type IV$(1,1)$. Then the only non-vacuous case is:
+\[
+F \text{ a real cubic field},\qquad D \text{ a totally indefinite quaternion division algebra over } F,\qquad m=1.
+\]
+In this case the Hodge group is
+\[
+\Hg(A) \;=\; \Res_{F/\Q}\SL_1(D),
+\]
+the space of Weil classes in $H^6(A)$ is $4$-dimensional, and conjecturally these Weil classes are algebraic if and only if $A$ has CM by a quadratic CM extension $E/F$. Moreover, the Tate conjecture for these classes reduces to the Hodge conjecture via the known Mumford--Tate conjecture for type IV.
+\end{conjecture}
+
+\begin{proof}[Rigorous part: dimension count and elimination]
+No complete proof is given. The rigorous part is limited to the following dimension count and elimination.
+
+By Albert's classification, for a simple abelian variety $A$ of dimension $g$ with $\End^0(A)=D$, one has
+\[
+g = e d m,
+\]
+where
+\[
+e=[F:\Q],\qquad d^2=[D:F],
+\]
+and $m$ is a positive integer. For type IV$(1,1)$, we have $d=2$, so
+\[
+g = 2 e m.
+\]
+Since $g=6$, this gives
+\[
+e m = 3.
+\]
+As $e$ and $m$ are positive integers, the possibilities are
+\[
+(e,m)=(1,3)\quad\text{or}\quad (3,1).
+\]
+
+If $e=1$, then $F=\Q$ and $D$ is a quaternion algebra over $\Q$. Type IV$(1,1)$ requires $D$ to be totally indefinite, i.e.
+\[
+D\otimes_\Q \R \cong M_2(\R).
+\]
+But a quaternion division algebra over $\Q$ that is split at the real place is necessarily the split algebra $M_2(\Q)$, which is not a division algebra. Hence $e=1$ is impossible for a division algebra.
+
+Therefore the only surviving case is
+\[
+e=3,\qquad m=1:
+\]
+$F$ is a real cubic field, $D$ is a totally indefinite quaternion division algebra over $F$, and $A$ has $\End^0(A)=D$ with $m=1$.
+\end{proof}
+
+\begin{remark}
+The remaining assertions concerning the Hodge group, the Weil classes, their algebraicity, and the Tate conjecture are stated as conjectures or known facts in the literature. No proof of these assertions is supplied here.
+\end{remark}
+
+\begin{assumptions}
+The argument uses:
+\begin{itemize}
+\item Albert's classification of endomorphism algebras of simple abelian varieties.
+\item For type IV$(1,1)$, the quaternion algebra $D$ is totally indefinite, i.e.\ $D\otimes_\Q \R \cong M_2(\R)$ at every real place of $F$.
+\item The dimension formula $g=e d m$ with $d^2=[D:F]$ and $m$ a positive integer.
+\item A quaternion division algebra over $\Q$ that is split at the real place is the split algebra $M_2(\Q)$, hence not a division algebra.
+\item The Hodge group, Weil class, and Tate conjecture statements are taken as conjectural or cited from the literature, not proved here.
+\end{itemize}
+\end{assumptions}
+
+\begin{gap}
+The main conjectural assertions are not proved: the structure of the Hodge group, the dimension and algebraicity of the Weil classes, the equivalence between algebraicity of Weil classes and CM by a quadratic CM extension, and the Tate conjecture for these classes. Only the dimension count and the elimination of $e=1$ are rigorously argued. The rest is a plan or conjecture, not a theorem.
+\end{gap}
+
+\section{S9: Type IV(2,1)}
+% Submitted by A2; reviewer note: The candidate explicitly labels the claim as a conjecture and provides only a conditional attack plan, not a proof. It correctly states that no unconditional proof is known and identifies the key open steps (generic Mumford–Tate group, irreducibility of monodromy on W, promotion of motivated cycles to algebraic cycles). There is no serious logical error or unsupported key step presented as a proof; the gaps are openly acknowledged. Therefore the mathematical content is appropriately qualified and does not require revision or blocking.
+\section{Type IV(2,1): the Hodge conjecture for Weil classes in dimension six}
+
+\begin{conjecture}[Type IV$(2,1)$, $\dim A = 6$]
+Let $A$ be a generic six-dimensional abelian variety of Albert Type IV$(2,1)$: thus
+$\operatorname{End}^0(A) = D$ is a totally definite quaternion algebra over a real
+quadratic field $F$, ramified at exactly one real place and split at the other, and
+$\dim_D A = 3$. Let $W \subset H^6(A)$ denote the $2$-dimensional space of Weil
+classes. Then the Hodge conjecture holds for $W$; equivalently, $W$ is spanned by
+the classes of codimension-$3$ algebraic cycles on $A$.
+\end{conjecture}
+
+No unconditional proof of Conjecture~1 is currently known. The discussion below is a
+conditional attack plan, not a proof: it reduces the claim to several open problems
+and known conditional statements.
+
+\subsection*{Setup}
+Let $A$ be a simple abelian sixfold with $\operatorname{End}^0(A) = D$, a totally
+definite quaternion algebra over a real quadratic field $F$, ramified at exactly one
+real place and split at the other. The Rosati involution is of the second kind, and
+$D \otimes_F \mathbb{R} \cong M_2(\mathbb{R}) \oplus \mathbb{H}$. The moduli problem
+S9 is a PEL Shimura variety $\mathrm{Sh}(G,X)$ with $G = \mathrm{GU}(D,\varphi)$ and
+$\dim \mathrm{Sh} = 6$.
+
+\subsection*{Generic member and Hodge group}
+Assume $A$ is generic in S9, so that the Mumford--Tate group
+$\mathrm{MT}(A)$ equals $\mathrm{GU}(D,\varphi)$ (or a maximal torus in the CM case).
+This is a standard expectation but is not proved here; it depends on monodromy and
+Galois density and on the absence of extra Hodge cycles.
+
+\subsection*{Weil-type locus}
+Assume $F$ contains an imaginary quadratic field $K$ and that $H^1(A)$ is a
+$K$-module with $K$-eigenspaces of equal dimension $3$. This is a codimension-$1$
+condition on S9. For such $A$, the space of Weil classes $W \subset H^6(A)$ is
+$2$-dimensional over $\mathbb{Q}$ and is a $\mathbb{Q}$-Hodge structure of type
+$(3,3)$.
+
+\subsection*{Absolute Hodge and motivated cycles}
+By Deligne, $W$ consists of absolute Hodge classes. By Andr\'e, $W$ consists of
+motivated cycles. These are unconditional facts about the Weil classes themselves,
+but they do not imply algebraicity.
+
+\subsection*{Conditional reduction}
+If one assumes:
+\begin{enumerate}
+\item[(a)] the Hodge group of a generic Weil-type $A$ is $\mathrm{GU}(D,\varphi)$ or a
+maximal torus, and the monodromy representation acts irreducibly on $W$;
+\item[(b)] the Tate conjecture holds for $A$ over a number field, or at least the
+Mumford--Tate conjecture holds for $A$;
+\item[(c)] the motivic Galois group is strictly larger than the Hodge group in a way
+that forces the motivated cycle in $W$ to be algebraic;
+\end{enumerate}
+then one could conclude that $W$ is algebraic. However, (a), (b), and (c) are not
+proved here. In fact, (b) and (c) are deep open problems in general.
+
+\subsection*{Known partial results}
+For $\dim A = 4$ (Type IV$(2,1)$ with $\dim A = 4$), the Hodge conjecture for Weil
+classes is known by Schoen and van Geemen. For $\dim A = 6$, the case at hand, it is
+open. The Kuga--Satake construction can transfer the problem to a lower-dimensional
+Shimura variety, but the transfer does not currently yield a proof in dimension $6$.
+
+\subsection*{Conclusion}
+The claim is a conjecture. The plan above identifies the key steps that would need to
+be proved: generic Mumford--Tate group, irreducibility of monodromy on $W$, and a
+mechanism to promote motivated cycles to algebraic cycles. None of these is
+established unconditionally. Therefore the claim is not proved.
+
+\medskip
+\noindent\textbf{Gap.} The central gap is the unconditional proof that the
+$2$-dimensional space $W$ of Weil classes in $H^6(A)$ is spanned by algebraic cycles.
+The plan reduces this to several open problems: (1) proving the generic
+Mumford--Tate group is $\mathrm{GU}(D,\varphi)$ and that monodromy acts irreducibly on
+$W$; (2) proving the Tate or Mumford--Tate conjecture for $A$ over a number field;
+(3) proving that the motivic Galois group forces the motivated Weil classes to be
+algebraic. None of these is currently known in the required generality. Additionally,
+the Weil-restriction construction may not produce an Albert Type IV$(2,1)$ algebra
+with center $F$, so the identification of the Shimura datum and moduli interpretation
+is not fully justified. Thus the claim remains a conjecture, not a theorem.
+
+\section{S10: Type IV(3,1)}
+% TODO: awaiting an approved proof.
+
+\section{S11: Type IV(6,1)}
+% Submitted by A1; reviewer note: The candidate explicitly labels the claim as a conjecture and provides only a conditional roadmap, not a proof. The reviewer task is to check for serious logical errors or unsupported key steps in a mathematical proof. Since no proof is claimed, there is no proof to evaluate for logical validity. The roadmap appropriately flags its key steps as open or conditional, and the stated gap acknowledges the central missing Shimura-subvariety proof. No serious logical error or unsupported key step presented as established proof is present.
+\section*{S11: Type IV$(6,1)$}
+
+\paragraph{Status.}
+The following is a \emph{conjecture}, not a theorem. No complete proof is currently available; the discussion below records a conditional roadmap and the principal open problems.
+
+\medskip
+\noindent\textbf{Conjecture.}
+$S_{11}$ is a Type IV$(6,1)$ Hodge locus inside the moduli of principally polarized $6$-dimensional abelian varieties, and it is expected to be a Shimura subvariety of the Siegel modular variety associated with a Shimura subgroup $H \subset \mathrm{GSp}_{12}$ whose real points act transitively on a Hermitian symmetric subdomain of $\mathbb{H}_6$. Its reflex field, monodromy, boundary behavior, and arithmetic are conjecturally determined by the Type IV$(6,1)$ Mumford--Tate group and the associated $1$-dimensional Hodge piece.
+
+\medskip
+\noindent\textbf{Conditional roadmap (not a proof).}
+
+\begin{enumerate}
+\item[\textbf{Step A}] \emph{(Explicit Shimura datum).} Conjecturally, the Mumford--Tate group $G_{S_{11}}$ for Type IV$(6,1)$ is a reductive $\mathbb{Q}$-group whose real form contains a compact unitary factor and a noncompact unitary or symplectic factor acting on a $1$-dimensional Hodge piece of type $(1,0)$ or $(0,1)$ inside the $12$-dimensional weight-$1$ space. One expects a Shimura datum $(H, X_H)$ with $H \subset \mathrm{GSp}_{12}$ and $X_H \subset \mathbb{H}_6$, where $X_H$ is a Hermitian symmetric subdomain. This step is open: the explicit $H$ and $X_H$ must be constructed and checked.
+
+\item[\textbf{Step B}] \emph{(Hodge locus realization).} By Cattani--Deligne--Kaplan, Hodge loci in a variation of Hodge structure are algebraic. If the stabilizer of the relevant Hodge class is a Shimura subgroup, then $S_{11}$ is a Shimura subvariety. The reflex field $E(S_{11})$ is conjecturally $\mathbb{Q}$ or a quadratic field, determined by the Galois action on the $1$-dimensional Hodge piece. This step is conditional on Step A and on verifying the Shimura-subgroup condition.
+
+\item[\textbf{Step C}] \emph{(Monodromy).} Let $\rho \colon \pi_1(S_{11}) \to \mathrm{GL}(H^1(A,\mathbb{Q}))$ be the monodromy representation of the universal family. Deligne's theorem identifies the identity component of the Zariski closure of the monodromy with the derived subgroup of the Mumford--Tate group, provided the family is not isotrivial and suitable irreducibility hypotheses hold. For Type IV$(6,1)$, the $1$-dimensional piece gives a rank-$1$ local system, so monodromy acts through a character on that piece. Whether the global monodromy is arithmetic or thin requires additional input (e.g.\ Deligne--Mostow, Shimura reciprocity, or $\ell$-adic monodromy theorems). This step is open.
+
+\item[\textbf{Step D}] \emph{(Degeneration and boundary).} The Satake--Baily--Borel compactification of $S_{11}$ and the Kulikov--Koll\'ar classification of degenerations of abelian varieties are expected to control the boundary. Monodromy cones and limiting mixed Hodge structures should determine whether $S_{11}$ is compact or has cusps. This step is conjectural and requires explicit computation of the boundary components and their monodromy.
+
+\item[\textbf{Step E}] \emph{(Specialization and arithmetic).} CM points are dense in Shimura varieties; if $S_{11}$ is Shimura, then $S_{11} \cap \mathrm{CM}$ is dense and Galois orbits can be described by Shimura reciprocity. The intersection with the Torelli locus $\mathcal{J}_6$ is expected to be non-empty and testable by degeneration. Hecke operators and the Hasse--Weil zeta function can be studied via the Shimura datum. These assertions are conditional on $S_{11}$ being Shimura.
+
+\item[\textbf{Step F}] \emph{(Verification and obstructions).} Dimension counts, Hodge numbers, and consistency with Type IV$(6,1)$ must be checked. If $H$ is not a Shimura subgroup, then $S_{11}$ is only a Hodge locus, and the route shifts to Zilber--Pink and Andr\'e--Oort-type results. No such verification is currently available.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+\item The Type IV$(6,1)$ classification for weight-$1$ Hodge structures on $6$-dimensional abelian varieties is correct and yields a Mumford--Tate group with a $1$-dimensional Hodge piece.
+\item The Hodge locus $S_{11}$ is defined by a Hodge-theoretic condition of Type IV$(6,1)$ inside the Siegel modular variety for $\mathrm{GSp}_{12}$.
+\item Cattani--Deligne--Kaplan algebraicity of Hodge loci applies to the relevant variation of Hodge structure.
+\item Deligne's theorem on the Zariski closure of monodromy applies with the necessary irreducibility and non-isotriviality hypotheses.
+\item The Satake--Baily--Borel compactification and Kulikov--Koll\'ar classification are applicable to the degenerations of the family over $S_{11}$.
+\item If $S_{11}$ is a Shimura subvariety, then standard Shimura reciprocity and density of CM points apply.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Gap.}
+The main gap is the absence of a proof that $S_{11}$ is a Shimura subvariety (C1). Even if C1 holds, the explicit Shimura datum $(H, X_H)$, the reflex field, the monodromy group, the boundary structure, and the arithmetic invariants are not computed. The roadmap contains unsupported steps: the use of Katz--Deligne to infer Zariski-density of global monodromy in $G^{\mathrm{der}}$ requires additional hypotheses; the invocation of Taniyama--Shimura for CM abelian varieties and Andr\'e--Oort for Type IV$(6,1)$ is imprecise; and the use of Ohsawa--Takegoshi or hyperbolicity to constrain the Hodge locus near the boundary is not justified. No rigorous proof is currently available.
+
+\medskip
+\noindent\textbf{Conclusion.}
+The claim is a conjecture. The roadmap identifies plausible steps but does not establish them. In particular, the Shimura-subvariety property (C1), the explicit monodromy group (C3), and the boundary analysis (C4) remain open.
+
+\section{N1: 5+1}
+% TODO: awaiting an approved proof.
+
+\section{N2: 4+2}
+% TODO: awaiting an approved proof.
+
+\section{N3: 4+1+1}
+% Submitted by A2; reviewer note: The candidate explicitly presents the claim as a conjecture and does not purport to give a complete proof. The conditional argument is logically coherent: it correctly identifies the algebraicity of the relevant idempotents/Weil classes as the key obstruction and acknowledges that the Hodge conjecture for Weil classes on 4-dimensional CM abelian varieties is open. No serious logical error or unsupported key step is asserted as proven; the gaps are clearly stated.
+\section*{N3: \(4+1+1\)}
+
+\begin{conjecture}
+Let \(A\) be a six-dimensional abelian variety over \(\mathbb C\) with a fixed polarization, and suppose its rational Hodge structure admits a \(4+1+1\) splitting
+\[
+H^1(A,\mathbb Q)=V_4\oplus V_1\oplus V_1',
+\qquad
+\dim V_4=8,\quad \dim V_1=\dim V_1'=2,
+\]
+corresponding to an isogeny decomposition
+\[
+A\sim A_4\times A_1\times A_1',
+\qquad
+\dim A_4=4,\quad \dim A_1=\dim A_1'=1.
+\]
+Then the splitting is motivated by algebraic cycles if and only if the relevant Weil classes on the four-dimensional factor \(A_4\) are algebraic. In the CM case this reduces to the Hodge conjecture for Weil classes on four-dimensional CM abelian varieties, which is open in general.
+\end{conjecture}
+
+\begin{proof}[Conditional discussion]
+No unconditional proof is currently available. The following conditional argument explains the structure of the conjecture.
+
+Assume \(A\) is isogenous to \(A_4\times A_1\times A_1'\), with
+\[
+\dim A_4=4,\qquad \dim A_1=\dim A_1'=1.
+\]
+If the idempotents \(e_4,e_1,e_1'\in \operatorname{End}^0(A)\) are algebraic, then the \(4+1+1\) splitting is motivated.
+
+For \(A_4\) of CM type with CM field \(E\) of degree \(8\), the existence of the idempotent \(e_4\) is equivalent to the algebraicity of certain Weil classes in \(H^4(A_4)\). By Shimura--Taniyama, the Hodge group of \(A_4\) is a torus, and the Hodge classes are generated by divisors and Weil classes. The Hodge conjecture for these Weil classes is known only for \(d\le 2\), i.e.\ \(\dim A_4\le 2\) for the standard construction; for \(\dim A_4=4\) it remains open.
+
+Thus, conditional on the Hodge conjecture for Weil classes on four-dimensional CM abelian varieties, the \(4+1+1\) splitting is motivated.
+
+In non-CM cases of Type II or Type III, the Hodge group is larger, for example \(\mathrm{Sp}_4\) or \(\mathrm{SU}(2,2)\), and the existence of such a splitting would impose strong constraints. No general construction or obstruction is known in these cases.
+
+Therefore the statement remains a conjecture, not a theorem.
+\end{proof}
+
+\begin{remark}
+The main gap is the Hodge conjecture for Weil classes on four-dimensional CM abelian varieties, which is open. In addition, the classification of \(\operatorname{End}^0(A)\) for sixfolds admitting a \(4+1+1\) splitting is incomplete, and the existence of such splittings in non-CM cases of Type II or Type III is not fully understood. No unconditional proof of the conjecture is presently available.
+\end{remark}
+
+\section{N4: 3+3}
+% Submitted by A3; reviewer note: The candidate is explicitly labeled a conjecture and its 'proof' is a reduction strategy that openly acknowledges the critical steps are not carried out. The review task is to check for serious logical errors or unsupported key steps in the mathematical proof. Since no unconditional proof is claimed, and the identified gaps are accurately described as open, there is no misrepresented logical error. The candidate appropriately states that the Hodge conjecture for 3+3 abelian varieties remains open.
+\section*{N4: The \(3+3\) Case as a Conjecture}
+
+\begin{conjecture}[Hodge conjecture for \(3+3\) abelian varieties]
+Let \(A\) be a \(6\)-dimensional abelian variety admitting a product decomposition
+\[
+A \sim A_1 \times A_2,
+\qquad
+\dim A_1 = \dim A_2 = 3.
+\]
+Then the Hodge conjecture holds for all Hodge classes on \(A\), including mixed K\"unneth components not generated by divisor classes or by obvious endomorphism cycles.
+\end{conjecture}
+
+\paragraph{Status.}
+This statement is a conjecture. The argument below is a reduction strategy, not an unconditional proof.
+
+\paragraph{Reduction strategy.}
+\begin{enumerate}
+  \item Use the K\"unneth decomposition
+  \[
+  H^k(A) = \bigoplus_{i+j=k} H^i(A_1) \otimes H^j(A_2),
+  \]
+  compatible with the Hodge bigrading. Hence every Hodge class decomposes into K\"unneth components which are themselves Hodge classes.
+
+  \item Discard the summands in which one factor has degree \(0\) or \(6\); these are products of factor classes and are algebraic by the known \(3\)-dimensional case. Also discard summands in which one factor has degree \(1\); these involve divisor classes and are algebraic by Lefschetz \((1,1)\). In middle degree \(6\), the only remaining potentially difficult summands are
+  \[
+  H^1(A_1) \otimes H^2(A_2)
+  \quad\text{and}\quad
+  H^2(A_1) \otimes H^1(A_2).
+  \]
+
+  \item Apply the Lefschetz operator \(L = L_1 + L_2\) to split these summands into primitive and non-primitive parts. The non-primitive parts are \(L\)-images of lower-degree classes, which are algebraic by the previous steps.
+
+  \item Analyze the Mumford--Tate group
+  \[
+  \mathrm{MT}(A) \subseteq \mathrm{MT}(A_1) \times \mathrm{MT}(A_2)
+  \]
+  and classify Hodge classes as \(\mathrm{MT}(A)\)-invariants in the primitive mixed piece.
+
+  \item In each case, either construct an algebraic cycle via endomorphisms, isogeny graphs, Hecke correspondences, or Chern classes, or prove vanishing of the Hodge classes.
+
+  \item Conclude that no exceptional Hodge classes exist.
+\end{enumerate}
+
+\paragraph{Known inputs.}
+The strategy relies on the K\"unneth decomposition, Lefschetz \((1,1)\), the CM case of the Hodge conjecture, the Hodge conjecture for abelian varieties of dimension \(\le 5\), and algebraicity of K\"unneth projectors.
+
+\paragraph{Gap.}
+The critical steps are not carried out. In particular, the Mumford--Tate classification in the non-CM, non-isogenous case, the vanishing of mixed primitive Hodge classes, and the treatment of the case in which one factor is CM and the other is not remain open. No explicit cycle constructions or vanishing theorems are provided for the difficult cases. Moreover, the reduction from K\"unneth components to algebraicity on \(A\) requires a precise correspondence argument that is only sketched.
+
+Therefore the Hodge conjecture for \(3+3\) abelian varieties remains open, and the statement above is conjectural.
+
+\section{N5: 3+2+1}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled a conjecture and repeatedly states that no rigorous proof is available; the 'proof' is a conditional strategy. The reviewer's task is to check for serious logical errors or unsupported key steps in a mathematical proof. Since no proof is claimed, there is no invalid proof to reject. The stated gaps are acknowledged and align with the conditional nature of the claim. Minor issues (e.g., imprecise use of 'Hodge group' vs. Mumford–Tate group, conditional invocation of the Hodge/Mumford–Tate conjectures) are not fatal because the candidate does not present them as established proof steps. Therefore, as a conjecture with an honest conditional strategy, it passes review.
+\section*{N5: \(3+2+1\)}
+
+\begin{conjecture}[\(3+2+1\) structure for Weil classes on sixfolds]
+Let \(A\) be a simple six-dimensional abelian variety of Albert type IV whose endomorphism algebra is a quaternion algebra over a CM field of degree \(6\), or, in the commutative case, a CM field of degree \(12\). Then the existence of Weil classes of type \((3,3)\) on \(A\) is controlled by a \(3+2+1\) splitting of the Hodge structure on \(H^1(A)\): the six CM embeddings split into subsets of sizes \(3\), \(2\), and \(1\), and the corresponding Weil torus has dimension \(3\). Such \(A\) are conjecturally classified by CM types invariant under a Weil involution, and the \(3+2+1\) partition is compatible with the Rosati involution.
+\end{conjecture}
+
+This statement is not proved. It is a conditional structural conjecture supported by Fermat and cyclotomic examples.
+
+\medskip
+\noindent\textbf{Status.} Conjecture. No rigorous proof is available. The discussion below is a conditional proof strategy, not a proof.
+
+\medskip
+\noindent\textbf{Step 1 (Algebraic classification, known).}
+For a simple sixfold \(A\), \(\operatorname{End}^0(A)\) is a division algebra of Albert type I--IV. In type IV, write \([F:\mathbb{Q}]=2e\) and \([D:F]=d^2\). The dimension formula gives
+\[
+g=\tfrac12 e d m
+\]
+for some positive integer \(m\). For \(g=6\), the possible pairs include
+\[
+(e,d)=(6,1),\ (3,2),\ (2,3),\ (1,6).
+\]
+The commutative CM case is \((6,1)\); the quaternion-over-CM case is \((3,2)\). The other cases are more non-commutative and are not expected to admit the required abelian Hodge-group behavior.
+
+\medskip
+\noindent\textbf{Step 2 (Hodge group and Mumford--Tate, conditional).}
+For a CM abelian variety, the Mumford--Tate group is a torus
+\[
+T=\operatorname{Res}_{F/\mathbb{Q}}\mathbb{G}_m
+\]
+or a quotient, and the Hodge group is its maximal compact subtorus. For a quaternion-algebra case, the Mumford--Tate group is a form of \(\operatorname{Res}_{F_0/\mathbb{Q}}\mathrm{GL}_2\), or a torus if the quaternion algebra splits at all Archimedean places. A necessary condition for Weil classes of type \((3,3)\) is that the Hodge group be strictly smaller than the full group allowed by the Albert type, or that it admit a nontrivial character fixing a \(3\)-dimensional space in \(H^{3,3}\). This is a dimension-drop test, not a sufficient condition.
+
+\medskip
+\noindent\textbf{Step 3 (Weil classes and reflex field, conditional).}
+For a CM type \(\Phi\) of degree \(6\), the reflex field \(F^*\) is generated by the traces \(\sum_{\phi\in\Phi}\phi(x)\). Weil classes of type \((p,p)\) correspond to characters of \(F^*\) trivial on a subtorus \(T_W\) of the Hodge group. For \(g=6\) and \(p=3\), one expects Weil classes when there is a \(3\)-dimensional subtorus \(T_W\) whose fixed space in \(H^{3,3}\) is nonzero. The \(3+2+1\) partition is the conjectural decomposition of \(\Phi\) into orbits of sizes \(3\), \(2\), \(1\) under a Weil involution \(\iota\).
+
+\medskip
+\noindent\textbf{Step 4 (Construction of examples, known and conjectural).}
+Known examples include the Fermat sixfold \(\operatorname{Jac}(C)\) for
+\[
+C:\ x^7+y^7+z^7=0,
+\]
+which is a CM sixfold with \(\operatorname{End}^0(A)\) a CM field of degree \(12\) and which carries Weil classes of type \((3,3)\) (Shioda). Cyclotomic sixfolds with CM by \(\mathbb{Q}(\zeta_7)\) or \(\mathbb{Q}(\zeta_9)\) are further examples. Conjecturally, quaternion-algebra sixfolds can be obtained as twists of Fermat sixfolds, and products of lower-dimensional CM varieties can be isogenous to simple sixfolds carrying the \(3+2+1\) structure.
+
+\medskip
+\noindent\textbf{Step 5 (Rosati compatibility, conditional).}
+For CM sixfolds, the Rosati involution restricts to complex conjugation on \(F\) and is positive. The \(3+2+1\) partition is conjectured to be stable under the Rosati involution if and only if the CM type \(\Phi\) is symmetric under the Weil involution \(\iota\). This compatibility is not proved in general.
+
+\medskip
+\noindent\textbf{Step 6 (Hodge-theoretic obstruction, conditional).}
+The Hodge conjecture for CM abelian varieties is known (Tate), so Weil classes on CM sixfolds are algebraic and correspond to codimension-\(3\) cycles. The \(3+2+1\) partition is conjectured to be equivalent to the existence of a codimension-\(3\) cycle not in the span of divisor classes. This equivalence is not established.
+
+\medskip
+\noindent\textbf{Step 7 (Classification, open).}
+A complete classification of simple sixfolds of Albert type IV with a \(3+2+1\) Hodge decomposition is not known. The conjectural classification uses CM types of degree \(12\) invariant under a Weil involution, with Galois group contained in \(S_3\times S_2\times S_1\). The number of CM types is finite up to isomorphism, but the classification has not been carried out.
+
+\medskip
+\noindent\textbf{Conclusion.}
+The \(3+2+1\) structure is a conjectural organizing principle for Weil classes on simple sixfolds of Albert type IV. It is supported by known examples (Fermat, cyclotomic) but is not proved in general. All steps depending on the Hodge conjecture, the Mumford--Tate conjecture, or the existence of a Weil involution are conditional.
+
+\medskip
+\noindent\textbf{Assumptions.}
+\begin{itemize}
+\item Albert classification of endomorphism algebras of abelian varieties.
+\item Dimension formula \(g=\tfrac12 e d m\) for type IV simple abelian varieties.
+\item For CM abelian varieties, the Mumford--Tate group is a torus and the Hodge group is its maximal compact subtorus.
+\item Weil classes of type \((p,p)\) correspond to characters of the reflex field trivial on a subtorus of the Hodge group.
+\item The Hodge conjecture for CM abelian varieties (Tate) is used conditionally to identify Weil classes with algebraic cycles.
+\item The Mumford--Tate conjecture is used conditionally to relate Hodge groups to Galois representations.
+\item The existence of a Weil involution on the CM type is assumed for the \(3+2+1\) partition.
+\item The Rosati involution is assumed to restrict to complex conjugation on the CM field in the cases considered.
+\item The quaternion-algebra case is assumed to admit a splitting at all Archimedean places when the Hodge group is abelian.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Gaps.}
+The main gaps are:
+\begin{enumerate}
+\item No proof that the \(3+2+1\) partition exists for any simple sixfold beyond the known Fermat and cyclotomic examples.
+\item No proof that the dimension-drop test for the Hodge group is sufficient for the existence of Weil classes of type \((3,3)\).
+\item No proof that the Rosati involution is compatible with the \(3+2+1\) partition in general.
+\item No complete classification of CM types of degree \(12\) admitting a Weil involution with orbit sizes \(3,2,1\).
+\item The quaternion-algebra case is not constructed explicitly; the existence of QM sixfolds with the required properties is conjectural.
+\item The use of the Hodge and Mumford--Tate conjectures makes the argument conditional; without them, the algebraicity and completeness claims are not established.
+\item The claim that only the cases \((e,d)=(6,1)\) and \((3,2)\) admit the \(3+2+1\) structure is not proved; the other type IV cases are not ruled out rigorously.
+\end{enumerate}
+
+\section{N6: 3+1+1+1}
+% TODO: awaiting an approved proof.
+
+\section{N7: 2+2+2}
+% TODO: awaiting an approved proof.
+
+\section{N8: 2+2+1+1}
+% Submitted by A3; reviewer note: The candidate is explicitly labeled CONJECTURE and does not claim a proof. The reviewer's task is to check for serious logical errors or unsupported key steps in a mathematical proof. Since no proof is offered—only a conditional strategy with all key steps marked as known or conjectural—there is no proof to evaluate for logical validity. The candidate's own gap analysis correctly identifies the unsupported generation step and the false assertion about odd-degree Hodge classes. The status is appropriately CONJECTURE, not PROVED. No serious logical error in a purported proof is present because no proof is claimed.
+```latex
+\section{Exceptional Hodge Classes in $H^6$ of a Six-Dimensional Abelian Variety}
+\label{sec:exceptional-hodge-h6}
+
+\begin{conjecture}
+\label{conj:exceptional-h6}
+Let $A$ be a six-dimensional abelian variety admitting a product decomposition
+\[
+A \sim A_1 \times A_2 \times E_1 \times E_2,
+\]
+where $A_1, A_2$ are abelian surfaces and $E_1, E_2$ are elliptic curves. Then the exceptional Hodge classes in $H^6(A)$---that is, those not generated by divisor classes and pullbacks from the factors---are expected to be spanned by K\"unneth tensor products of lower-degree exceptional classes. Specifically:
+\begin{enumerate}
+  \item tensor products of Weil classes on $A_1$ and/or $A_2$ with $H^0$ on the elliptic factors;
+  \item tensor products of a Weil class on one abelian surface with $H^1 \otimes H^1$ on the elliptic factors and $H^0$ on the other abelian surface.
+\end{enumerate}
+The Hodge locus for such products is expected to be a union of special subvarieties defined by CM conditions, existence of Weil classes on $A_1$ or $A_2$, and isogeny relations between the elliptic factors. The algebraicity of these exceptional classes is equivalent to the Hodge conjecture for these special classes and remains open in general.
+\end{conjecture}
+
+\begin{remark}[Status]
+\label{rem:status}
+Conjecture~\ref{conj:exceptional-h6} is stated as a conjecture. No proof is claimed. The discussion below records a conditional strategy and its obstructions; it does not establish the conjecture.
+\end{remark}
+
+\subsection{Conditional Strategy}
+\label{subsec:conditional-strategy}
+
+The following steps outline a conditional approach. Each step is either known or explicitly conjectural; no step constitutes a complete proof.
+
+\begin{enumerate}
+  \item \textbf{K\"unneth decomposition.} Decompose $H^6(A)$ via K\"unneth into components indexed by $(i_1,i_2,i_3,i_4)$ with $i_1+i_2+i_3+i_4 = 6$, where $i_j$ records the degree on the $j$-th factor.
+  \item \textbf{Lower-dimensional exceptional classes.} On each abelian surface $A_j$, Weil classes in $H^2$ may exist if $A_j$ has multiplication by a totally real field. On elliptic curves, all Hodge classes are algebraic.
+  \item \textbf{K\"unneth tensors.} Form K\"unneth tensors of these lower-degree classes to obtain $(3,3)$-classes in $H^6$.
+  \item \textbf{Hodge group invariants.} Use the Hodge group (Mumford--Tate group) of the product to compute invariants in $H^6$. If the factors are pairwise non-isogenous, the Hodge group is the product of the factors' Hodge groups, and exceptional classes are those not in the span of divisor classes.
+  \item \textbf{Cycle construction.} Attempt to construct algebraic cycles representing these classes using known cycles on the factors and the K\"unneth decomposition of the diagonal.
+  \item \textbf{Hodge locus.} Vary the product in moduli to determine the Hodge locus.
+\end{enumerate}
+
+\subsection{Assumptions}
+\label{subsec:assumptions}
+
+\begin{enumerate}
+  \item The product decomposition $A \sim A_1 \times A_2 \times E_1 \times E_2$ is defined over a number field, and the factors are pairwise non-isogenous, except where isogenies are explicitly considered.
+  \item The Hodge group of the product is the product of the Hodge groups of the factors when the factors are pairwise non-isogenous.
+  \item Weil classes on abelian surfaces exist under the known criteria (Weil, Ribet) and are algebraic only conjecturally.
+  \item The K\"unneth decomposition of the diagonal can be used to express mixed classes as linear combinations of products of cycles from factors.
+  \item The Hodge locus is expected to be a union of special subvarieties, but this is not assumed as a theorem.
+\end{enumerate}
+
+\subsection{Gap Analysis}
+\label{subsec:gap-analysis}
+
+The conditional strategy does not establish Conjecture~\ref{conj:exceptional-h6}. The key generation step---that all exceptional Hodge classes in $H^6$ are spanned by K\"unneth tensors of lower-degree exceptional classes---is unproved and is explicitly conjectural. Moreover, the assertion that $H^3(A)$ has no Hodge classes from the pure K\"unneth decomposition is false in general: odd-degree Hodge classes can arise from tensors such as $H^1 \otimes H^1 \otimes H^1$ when factors are isogenous or have CM. The treatment of mixed classes from isogenies is asserted, not proved. The Mumford--Tate generation statement is conjectural. Thus the strategy has unsupported key steps and cannot be approved as a proof. The status is \textsc{Conjecture}, not \textsc{Proved}.
+```
+
+\section{N9: 2+1+1+1+1}
+% Submitted by A2; reviewer note: The candidate is explicitly labeled as a conjecture and the argument is presented as conditional. The main mathematical steps (slope decomposition, Hom(E,B)=0, End^0(A) decomposition, and the standard Albert type restrictions for ordinary B) are either standard or appropriately flagged as conditional. The identified gaps—especially the product decomposition of Hodge groups, the Type I/II Hodge group classification, and the reliance on the Mumford–Tate conjecture for Type IV—are acknowledged rather than hidden. There is no serious unsupported step being presented as a theorem, so the conjecture status is consistent with the proof sketch.
+\section*{N9: Newton stratum \(2+1+1+1+1\)}
+
+\begin{conjecture}
+Let \(A\) be a \(6\)-dimensional abelian variety over an algebraically closed field of characteristic \(p>0\) whose Newton polygon is \(2+1+1+1+1\). Then \(A\) is isogenous to
+\[
+A \sim E \times B,
+\]
+where \(E\) is a supersingular elliptic curve and \(B\) is an ordinary \(5\)-dimensional abelian variety. Consequently,
+\[
+\operatorname{End}^0(A) \cong B_{p,\infty} \times \operatorname{End}^0(B),
+\qquad
+\operatorname{Hom}(E,B)=0,
+\]
+and, up to isogeny,
+\[
+\operatorname{Hdg}(A) \cong \mathrm{SU}_2 \times \operatorname{Hdg}(B).
+\]
+The possible Albert types for \(B\) are \(\mathrm{I}\), \(\mathrm{II}\), or \(\mathrm{IV}\); Type \(\mathrm{III}\) is excluded by ordinarity. Weil classes exist only when \(B\) has CM. The full classification of the \(N9\) strata by Albert type remains conjectural pending the Mumford--Tate conjecture for Type \(\mathrm{IV}\).
+\end{conjecture}
+
+\begin{proof}[Conditional argument]
+This is not a complete proof; it is a conditional argument supporting the conjecture above.
+
+\emph{Slope decomposition.} By Dieudonné--Manin theory, the \(p\)-divisible group \(A[p^\infty]\) has slopes \(\{2,1^{(5)}\}\). The slope-\(2\) part is isoclinic of rank \(2\), corresponding to a supersingular elliptic curve \(E\). The slope-\(1\) part is ordinary of rank \(10\), corresponding to an ordinary \(5\)-dimensional abelian variety \(B\). Since morphisms of \(p\)-divisible groups preserve slopes, \(\operatorname{Hom}(E,B)=0\). Hence \(A\) is isogenous to \(E\times B\), and
+\[
+\operatorname{End}^0(A)\cong \operatorname{End}^0(E)\times \operatorname{End}^0(B)
+= B_{p,\infty}\times \operatorname{End}^0(B).
+\]
+
+\emph{Endomorphism algebra of \(E\).} For a supersingular elliptic curve,
+\[
+\operatorname{End}^0(E)=B_{p,\infty},
+\]
+the quaternion division algebra over \(\mathbb{Q}\) ramified exactly at \(p\) and \(\infty\), equipped with the canonical Rosati involution.
+
+\emph{Albert types for \(B\).} Since \(B\) is ordinary of dimension \(5\), its endomorphism algebra \(\operatorname{End}^0(B)\) is a division algebra with positive Rosati involution. The possible Albert types are:
+\begin{itemize}
+\item Type \(\mathrm{I}\): a totally real field \(F\) with \([F:\mathbb{Q}]=5\);
+\item Type \(\mathrm{II}\): a quaternion algebra over a totally real field \(F\) with \([F:\mathbb{Q}]=5\), indefinite at every archimedean place;
+\item Type \(\mathrm{III}\): a quaternion algebra over a totally real field \(F\) with \([F:\mathbb{Q}]=5\), definite at every archimedean place;
+\item Type \(\mathrm{IV}\): a CM field \(K\) with \([K:\mathbb{Q}]=10\), or a division algebra over a CM field.
+\end{itemize}
+Type \(\mathrm{III}\) is excluded because ordinary abelian varieties have CM, or at least a large commutative part, whereas Type \(\mathrm{III}\) is definite and incompatible with ordinarity. The enumeration of Types \(\mathrm{I}\), \(\mathrm{II}\), and \(\mathrm{IV}\) is standard in the Albert classification, but is stated here conditionally on the ordinarity hypothesis.
+
+\emph{Hodge group.} For \(A=E\times B\), one expects
+\[
+\operatorname{Hdg}(A)\cong \operatorname{Hdg}(E)\times \operatorname{Hdg}(B)
+\]
+up to isogeny, provided \(\operatorname{Hom}(E,B)=0\) and there are no additional Hodge classes coming from isogenies. Here \(\operatorname{Hdg}(E)\cong \mathrm{SU}_2\). For \(B\), the Hodge group is a torus if \(B\) has CM, a unitary group \(U(n,m)\) if \(B\) is Type \(\mathrm{IV}\) non-CM, and a symplectic group if \(B\) is Type \(\mathrm{II}\). This product decomposition is not rigorously proved here and may fail in non-generic cases.
+
+\emph{Weil classes.} Weil classes on \(A\) are expected to exist only if \(B\) has CM. Their dimension depends on the CM type. For non-CM Type \(\mathrm{IV}\), the existence of Weil classes is conjectural and tied to the Mumford--Tate conjecture.
+
+\emph{Classification.} The stratum \(N9\) is non-empty; examples exist with \(E\) supersingular and \(B\) ordinary CM by a degree-\(10\) CM field \(K\) split at \(p\). The full classification of \(N9\) strata by Albert type is only partially known; a complete classification requires the Mumford--Tate conjecture for Type \(\mathrm{IV}\).
+\end{proof}
+
+\begin{remark}[Gaps]
+The argument above is conditional. The main gaps are:
+\begin{enumerate}
+\item The product decomposition
+\[
+\operatorname{Hdg}(A)\cong \operatorname{Hdg}(E)\times \operatorname{Hdg}(B)
+\]
+is stated without rigorous proof and can fail in the presence of isogenies or additional Hodge classes.
+\item The classification of Hodge groups for Type \(\mathrm{I}\) and Type \(\mathrm{II}\) surfaces is asserted rather than proved.
+\item The claim that Type \(\mathrm{II}\) with Hodge group \(\mathrm{SU}(2,1)\) forces a Weil class in \(H^2\) is dimensionally suspect and not justified; the argument does not explain how such classes are distinguished from divisor classes.
+\item Non-generic isogeny cases are deferred rather than handled.
+\item The full classification of \(N9\) strata by Albert type requires the Mumford--Tate conjecture for Type \(\mathrm{IV}\), which is open.
+\end{enumerate}
+Thus the statement is a conjecture, not a theorem.
+\end{remark}
+
+\section{N10: 1+1+1+1+1+1}
+% Submitted by A3; reviewer note: The candidate is explicitly labeled CONJECTURE and does not claim to prove the Hodge conjecture for six-dimensional abelian varieties. The proof is a conditional reduction: it assumes the residual statements R4, R5, R6 and derives the claim from Kunneth and known low-dimensional cases. The stated gap correctly identifies that these residual conjectures are not established. No serious logical error or unsupported key step is present in the conditional argument as presented.
+\section*{N10: \(1+1+1+1+1+1\)}
+
+\begin{conjecture}
+For every six-dimensional abelian variety \(A\) over \(\mathbb{C}\), every Hodge class in \(H^{2k}(A,\mathbb{Q})\) is algebraic; equivalently, the Hodge conjecture holds for abelian varieties of dimension \(6\).
+\end{conjecture}
+
+\begin{proof}[Conditional reduction]
+This is a conditional reduction, not a proof. The Hodge conjecture is isogeny-invariant, so we may replace \(A\) by an isogenous abelian variety and decompose
+\[
+A \sim \prod_i A_i^{n_i},
+\]
+where the \(A_i\) are simple and pairwise non-isogenous. By K\"unneth,
+\[
+H^*(A) \cong \bigotimes_i H^*(A_i^{n_i}),
+\]
+compatibly with Hodge structures, and Hodge classes on \(A\) are sums of tensor products of Hodge classes on the factors.
+
+We use the following known cases:
+\begin{itemize}
+\item the Hodge conjecture for abelian varieties of dimension \(\le 3\) (classical for dimension \(\le 2\); Tankeev--Ribet for dimension \(3\), including CM cases);
+\item the Hodge conjecture for products of elliptic curves (Tate);
+\item the Hodge conjecture for CM abelian varieties (Shimura--Taniyama);
+\item the Lefschetz \((1,1)\) theorem, giving algebraicity of all Hodge classes in \(H^2\).
+\end{itemize}
+
+After applying these facts, the only cases not covered by known results are:
+\begin{enumerate}
+\item[(Q)] \(A = A_1 \times A_2\), with \(\dim A_1 = 2\) and \(A_2\) a simple abelian \(4\)-fold non-isogenous to \(A_1\);
+\item[(S)] \(A = E \times B\), with \(E\) an elliptic curve and \(B\) a simple abelian \(5\)-fold non-isogenous to \(E\);
+\item[(R)] \(A\) simple of dimension \(6\).
+\end{enumerate}
+
+In case (Q), K\"unneth reduces the problem to algebraicity of degree-\(4\) Hodge classes on the simple abelian \(4\)-fold \(A_2\). In case (S), it reduces to algebraicity of degree-\(4\) (and dually degree-\(6\)) Hodge classes on the simple abelian \(5\)-fold \(B\). In case (R), the only nontrivial degree is the middle degree \(3\), namely \(H^6(A)\), since \(H^4\) is dual to \(H^8\) and \(H^2\) is handled by Lefschetz.
+
+Thus the residual open inputs are exactly:
+\begin{itemize}
+\item[\textbf{R4:}] every degree-\(4\) Hodge class on a simple abelian \(4\)-fold is algebraic;
+\item[\textbf{R5:}] every degree-\(4\) Hodge class on a simple abelian \(5\)-fold is algebraic;
+\item[\textbf{R6:}] every degree-\(3\) Hodge class on a simple abelian \(6\)-fold is algebraic.
+\end{itemize}
+If one assumes R4, R5, and R6, then the K\"unneth decomposition together with the known low-dimensional cases implies the claim for all six-dimensional abelian varieties.
+
+The product case \(A_1 \times A_2 \times A_3\) with three abelian surfaces is fully known by K\"unneth together with the Hodge conjecture for abelian surfaces; no exceptional classes arise there. The genuinely exceptional part is the simple or almost-simple residual, where the Hodge group may have invariants not generated by divisor classes.
+\end{proof}
+
+\begin{remark}[Gap]
+The argument is conditional. It does not establish the residual conjectures R4, R5, or R6. In particular, it does not prove the Hodge conjecture in degree \(4\) for simple abelian \(4\)-folds, in degree \(4\) for simple abelian \(5\)-folds, or in degree \(3\) for simple abelian \(6\)-folds. The mixed cases involving a simple abelian \(4\)-fold or \(5\)-fold, and the simple sixfold case, remain open. The argument also does not give a complete classification of proper Mumford--Tate groups in dimension \(6\), nor does it rule out exceptional Hodge classes not generated by divisors. Therefore the claim remains a conjecture, not a theorem.
+\end{remark}
+\end{document}
